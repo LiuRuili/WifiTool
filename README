@@ -1,0 +1,10 @@
+wifitest Porting guide
+
+Before porting wifitest, please make your code base built onece. It will make sure whether the build break is caused by wifitest or not.
+
+1. Put the whole wifitest folder into external
+2. mm the wifitest in external to generate new binary
+3. run script porting.sh by wifi solution => ex. bash porting_bcm.sh / bash porting_intel.sh
+4. the diff will be change into hardware/broadcom/wlan/wifitest
+5. delete the whole wifitest folder in external
+6. re-compile the system image again to check if porting is ok

@@ -1,0 +1,206 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/AbgnMimoLayout"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:keepScreenOn="true"
+    android:orientation="vertical" >
+    
+    <LinearLayout
+        android:layout_centerHorizontal="true" 
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:id="@+id/FTMOnOffButton" >
+        <ToggleButton 
+            android:id="@+id/FTMStartStop"
+            android:layout_width="100dip"
+            android:layout_height="100dip"
+            android:textOn="@string/ftm_started_text"
+            android:textOff="@string/ftm_stopped_text"/>
+        <ToggleButton 
+            android:id="@+id/StartTxRx"
+            android:layout_width="100dip"
+            android:layout_height="100dip"
+            android:textOn="@string/test_start_text"
+            android:textOff="@string/test_stop_text"/>
+    
+    </LinearLayout>
+
+    <ScrollView
+        android:layout_below="@id/FTMOnOffButton"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dip"
+        android:orientation="vertical" >
+    <LinearLayout
+        android:id="@+id/OptionLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical" >
+        
+        <TextView
+            android:id="@+id/TxRxText" 
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:background="#999999"
+            android:text="@string/tx_rx_test_text" />
+        
+        <Spinner
+            android:id="@+id/TxRxSpin"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content" />
+        
+        <TextView 
+            android:id="@+id/ModeText"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:background="#999999"
+            android:text="@string/mode_text" />
+        
+        <Spinner
+            android:id="@+id/ModeSpin"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content" />
+        
+        <TextView 
+            android:id="@+id/ChannelText"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:background="#999999"
+            android:text="@string/channel_text" />
+        
+        <Spinner
+            android:id="@+id/Channel5GSpin"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content" />
+
+        
+        <Spinner
+            android:id="@+id/Channel2GSpin"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content" />
+        
+        <Spinner
+            android:id="@+id/ChannelAllSpin"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content" />
+
+        <Spinner
+            android:id="@+id/ChannelNSpin"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content" />
+
+        <TextView 
+            android:id="@+id/RateText"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:background="#999999"
+            android:text="@string/rate_text" />
+        
+        <Spinner
+            android:id="@+id/RateBSpin"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content" />
+        
+        <Spinner
+            android:id="@+id/RateASpin"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content" />
+                
+        <Spinner
+            android:id="@+id/RateNSpin"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content" />
+        
+        <TextView
+            android:id="@+id/PowerText" 
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:background="#999999"
+            android:text="@string/power_text" />
+        
+        <Spinner
+            android:id="@+id/PowerSpin"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content" />
+        
+        <Spinner
+            android:id="@+id/Power11ASpin"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content" />
+        
+        <Spinner
+            android:id="@+id/Power11BSpin"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content" />
+        
+        <Spinner
+            android:id="@+id/Power11GSpin"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content" />
+        
+        <Spinner
+            android:id="@+id/Power11NSpin"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content" />
+        
+        <TextView 
+            android:id="@+id/AntennaText"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:background="#999999"
+            android:text="@string/antenna_text" />
+        
+        <Spinner
+            android:id="@+id/AntennaSpin"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content" />
+        
+        <TextView
+            android:id="@+id/BandwidthText" 
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:background="#999999"
+            android:text="@string/bandwidth_text" />
+        
+        <Spinner
+            android:id="@+id/BandwidthSpin"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content" />
+        
+        <TextView 
+            android:id="@+id/SidebandText"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:background="#999999"
+            android:text="@string/sideband_text" />
+        
+        <Spinner
+            android:id="@+id/SidebandSpin"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content" />
+
+        <TextView
+            android:id="@+id/GuardIntervalText"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:background="#999999"
+            android:text="@string/guardinterval_text" />
+
+        <Spinner
+            android:id="@+id/GuardIntervalSpin"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content" />
+
+        <Button 
+            android:id="@+id/CaptureRecvPktBtn" 
+            android:layout_width="fill_parent"
+            android:layout_height="60dip"
+            android:text="@string/received_packet_number_text" > 
+        </Button>
+    
+    </LinearLayout>
+    </ScrollView>    
+
+</RelativeLayout>

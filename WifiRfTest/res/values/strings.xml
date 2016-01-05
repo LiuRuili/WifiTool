@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">WlanRfTest</string>
+    <string name="action_settings">Settings</string>
+    <string name="hello_world">Hello world!</string>
+    <string name="ftm_started_text">FTM mode started</string>
+    <string name="ftm_stopped_text">FTM mode stopped</string>
+    <string name="test_start_text">Test started</string>
+    <string name="test_stop_text">Test stopped</string>
+    <string name="tx_rx_test_text">Tx/Rx Test</string>
+    <string name="mode_text">802.11 a/b/g/n mode</string>
+    <string name="channel_text">Channel</string>
+    <string name="rate_text">Rate</string>
+    <string name="power_text">Power</string>
+    <string name="antenna_text">Antenna</string>
+    <string name="bandwidth_text">Bandwidth</string>
+    <string name="sideband_text">Sideband</string>
+    <string name="guardinterval_text">Guard Interval</string>
+    <string name="received_packet_number_text">Received packet number</string>
+
+</resources>

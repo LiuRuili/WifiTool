@@ -1,0 +1,8 @@
+on post-fs-data
+symlink /system/bin/WifiTest /data/data/WifiTest
+symlink /system/bin/WiFiMaxPower /data/data/WiFiMaxPower
+
+service wifirftestd /system/bin/wifirftestd
+    class main
+    user root
+    group root system
