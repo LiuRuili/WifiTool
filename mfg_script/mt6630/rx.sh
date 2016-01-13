@@ -20,7 +20,7 @@ case $2 in
 esac
 
 logi "wifitesttool -r -n 0 -c $channel -b $bw"
-result=$(wifitesttool -r -n 0 -c $channel)
+result=$(wifitesttool -r -n 0 -c $channel -b $bw)
 logi "$result"
 for var in $result; do
 	if [ $var = "(fail)" ]; then

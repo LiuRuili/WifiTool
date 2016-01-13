@@ -66,8 +66,8 @@ case $6 in
 ;;
 esac
 
-logi "wifitesttool -t $mode -n 0 -S 0 -c $channel -p $power -R $rate -s 1 -N $rate -g 1 -G $gi -b $bw"
-result=$(wifitesttool -t $mode -n 0 -S 0 -c $channel -p $power -R $rate -s 1 -N $rate -g 1 -G $gi -b $bw)
+logi "wifitesttool -t $mode -n 0 -S 0 -c $channel -p $power -R $rate -s 1 -N $rate -g 0 -G $gi -b $bw"
+result=$(wifitesttool -t $mode -n 0 -S 0 -c $channel -p $power -R $rate -s 1 -N $rate -g 0 -G $gi -b $bw)
 logi "$result"
 for var in $result; do
 	if [ $var = "(fail)" ]; then
