@@ -13,71 +13,18 @@
 #define MAX_SUPPORT_MODE 7
 #define MAXLINE 256
 
-    /*    Project    codename    wifi chip
-     *
-     *    TF701T     K00C        BCM43340
-     *    ME560CG    K00G        BCM43340
-     *    TF303CL    K014        BCM43340
-     *    TF103C     K010        BCM43340
-     *    TF103CE    K010E       BCM43340
-     *    ME176CE    K013C       BCM43340
-     *
-     *    P1802      P1802-T     BCM43241
-     *
-     *    ME581C     K01H        BCM4339
-     *    ME581CL    K015        BCM4339
-     *    Z581C      P025        BCM4339
-     *    SANTA      P025        BCM4339
-     *
-     *    FE170CG    K012        BCM43362
-     *    ME170C     K017        BCM43362
-     *    ME70C      K01A        BCM43362
-     *    TF103CG    K018        BCM43362
-     *    FE375CG    mofd_v0 / K019     BCM43362
-     *    ME572C     K007        BCM43362
-     *    ME572CL    K00R        BCM43362
-     *
-     *    TF303K     K01B        WCN3660
-     *    TV500I     KIWI        BCM43241/BCM4354
-     *
-     *    ME375CL    K00X        BCM4343S
-     *    FE375CL    K01Q        BCM4343S
-     *    RD001      K01R        BCM4343S
-     *    Z300CL     P01T        BCM4343S
-     *
-     *    Z170C      K01Z/P01Z   AG620
-     *    Z170CG     K01Y/P01Y   AG620
-     *    Z370C      K01W/P01W   AG620
-     *    Z370CG     K01V/P01V   AG620
-     *
-     *    Z370CL     P01I/SofiaLTE_AOSP EPAD  Lnp
-     */
-
-bool is_asus_project()
+int is_asus_project()
 {
-    char project_id[PROPERTY_VALUE_MAX];
-    char spec[PROPERTY_VALUE_MAX];
-    property_get("ro.product.model", project_id, "");
-
-    if (!strncmp(project_id, "K00G", 4) || !strncmp(project_id, "K00C", 4) ||     // ME560CG & TF701T
-        !strncmp(project_id, "TF303CL", 7) || !strncmp(project_id, "K014", 4) ||  // TF303CL
-        !strncmp(project_id, "K010", 4) || !strncmp(project_id, "K013C", 5) ||
-        !strncmp(project_id, "K010E", 5)|| !strncmp(project_id, "K00X", 4) ||
-        !strncmp(project_id, "K01Q", 4) || !strncmp(project_id, "K013", 4) ||
-        !strncmp(project_id, "K011", 4) || !strncmp(project_id, "K007", 4) ||
-        !strncmp(project_id, "K00R", 4) || !strncmp(project_id, "K019", 4) ||
-        !strncmp(project_id, "K018", 4) || !strncmp(project_id, "K017", 4) ||
-        !strncmp(project_id, "K01A", 4) || !strncmp(project_id, "K012", 4) ||
-        !strncmp(project_id, "K01Z", 4) || !strncmp(project_id, "K01Y", 4) ||
-        !strncmp(project_id, "K01W", 4) || !strncmp(project_id, "K01V", 4) ||
-        !strncmp(project_id, "P01Z", 4) || !strncmp(project_id, "P01Y", 4) ||
-        !strncmp(project_id, "P01W", 4) || !strncmp(project_id, "P01V", 4) ||
-        !strncmp(project_id, "K01R", 4) || !strncmp(project_id, "P01T", 4) ||
-        !strncmp(project_id, "P01I", 4) || !strncmp(project_id, "P025", 4) ||
-        !strncmp(project_id, "SofiaLTE_AOSP EPAD", 18)) {
-        return true;  // ASUS project
-    }
-    return false; // Not ASUS project
+	FILE* pipe = popen("WifiSetup", "r");
+	char buffer[128];
+	if (pipe) {
+		while(!feof(pipe)) {
+			if(fgets(buffer, 128, pipe) != NULL){}
+		}
+		pclose(pipe);
+		buffer[strlen(buffer)-1] = '\0';
+	}
+	return atoi(buffer);
 }
 
 int main(int argc, char **argv)

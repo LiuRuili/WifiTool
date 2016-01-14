@@ -57,6 +57,7 @@ const struct model_chip_struct asus_model_chip_map[] = {
 	{ "mofd_v1", BCM4343S },
 	{ "AST21", BCM4339 }, { "K015", BCM4339 },		// ME581CL
 	{ "K01H", BCM4339 }, { "P025", BCM4339 },		// ME581C & Z581C & SANTA
+	{ "TOBY", BCM4339 },					// TOBY
 	{ "KIWI", BCM4354 },					// TV500I
 	{ "K01B", WCN3660 }, 					// TF303K
 	{ "P002", WCN3610 },					// Z370KL
