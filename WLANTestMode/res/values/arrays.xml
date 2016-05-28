@@ -1,0 +1,490 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+================================================================================
+|                                                                 Date:10/2012 |
+|                                 PRESENTATION                                 |
+|                                                                              |
+|        Copyright 2012 TCL Communication Technology Holdings Limited.         |
+|                                                                              |
+| This material is company confidential, cannot be reproduced in any form      |
+| without the written permission of TCL Communication Technology Holdings      |
+| Limited.                                                                     |
+|                                                                              |
+| **************************************************************************** |
+|  Author :  Chen Ji                                                           |
+|  Email  :  Ji.Chen@tcl-mobile.com                                            |
+|  Role   :                                                                    |
+|  Reference documents : refer bugID200662/161302                              |
+| **************************************************************************** |
+|  Comments :                                                                  |
+|  File     : development/apps/WLANTestMode/res/values                         |
+|  Labels   :                                                                  |
+| **************************************************************************** |
+| ============================================================================ |
+|      Modifications on Features list / Changes Request / Problems Report      |
+| **************************************************************************** |
+|    date   |        author        |         Key          |      comment       |
+| **********|**********************|**********************|******************* |
+| 10/22/2012|Chen Ji               |bugID321787           |arrays.xml file is  |
+|           |                      |                      |needed by WLAN app  |
+| **********|**********************|**********************|******************* |
+================================================================================
+-->
+<resources>
+
+    <string-array name="power_cntl_mode">
+        <item>SCPC</item>
+        <item>CLPC</item>
+    </string-array>
+
+    <string-array name="channel_bonding">
+        <item>None</item>
+        <item>40M primary low</item>
+        <item>40M primary center</item>
+        <item>40M primary high</item>
+        <item>80M 20/40 Low 40/80 center</item>
+        <item>80M 20/40 center 40/80 center</item>
+        <item>80M 20/40 high 40/80 center</item>
+        <item>80M 20/40 low 40/80 low</item>
+        <item>80M 20/40 high 40/80 low</item>
+        <item>80M 20/40 low 40/80 high</item>
+        <item>80M 20/40 high 40/80 high</item>
+    </string-array>
+
+    <!-- Used in Spinner/spinner_2.java -->
+    <string-array name="channels">
+        <item>2412(1)</item>
+        <item>2417(2)</item>
+        <item>2422(3)</item>
+        <item>2427(4)</item>
+        <item>2432(5)</item>
+        <item>2437(6)</item>
+        <item>2442(7)</item>
+        <item>2447(8)</item>
+        <item>2452(9)</item>
+        <item>2457(10)</item>
+        <item>2462(11)</item>
+        <item>2467(12)</item>
+        <item>2472(13)</item>
+        <item>5180(36)</item>
+        <item>5200(40)</item>
+        <item>5220(44)</item>
+        <item>5240(48)</item>
+        <item>5260(52)</item>
+        <item>5280(56)</item>
+        <item>5300(60)</item>
+        <item>5320(64)</item>
+        <item>5500(100)</item>
+        <item>5520(104)</item>
+        <item>5540(108)</item>
+        <item>5560(112)</item>
+        <item>5580(116)</item>
+        <item>5600(120)</item>
+        <item>5620(124)</item>
+        <item>5640(128)</item>
+        <item>5660(132)</item>
+        <item>5680(136)</item>
+        <item>5700(140)</item>
+        <item>5745(149)</item>
+        <item>5765(153)</item>
+        <item>5785(157)</item>
+        <item>5805(161)</item>
+        <item>5825(165)</item>
+        <item>5190(38)</item>
+        <item>5230(46)</item>
+        <item>5270(54)</item>
+        <item>5310(62)</item>
+        <item>5510(102)</item>
+        <item>5550(110)</item>
+        <item>5590(118)</item>
+        <item>5630(126)</item>
+        <item>5670(134)</item>
+        <item>5755(151)</item>
+        <item>5795(159)</item>
+    </string-array>
+
+    <string-array name="channels_20m">
+        <item>2412(1)</item>
+        <item>2417(2)</item>
+        <item>2422(3)</item>
+        <item>2427(4)</item>
+        <item>2432(5)</item>
+        <item>2437(6)</item>
+        <item>2442(7)</item>
+        <item>2447(8)</item>
+        <item>2452(9)</item>
+        <item>2457(10)</item>
+        <item>2462(11)</item>
+        <item>2467(12)</item>
+        <item>2472(13)</item>
+        <item>5180(36)</item>
+        <item>5200(40)</item>
+        <item>5220(44)</item>
+        <item>5240(48)</item>
+        <item>5260(52)</item>
+        <item>5280(56)</item>
+        <item>5300(60)</item>
+        <item>5320(64)</item>
+        <item>5500(100)</item>
+        <item>5520(104)</item>
+        <item>5540(108)</item>
+        <item>5560(112)</item>
+        <item>5580(116)</item>
+        <item>5600(120)</item>
+        <item>5620(124)</item>
+        <item>5640(128)</item>
+        <item>5660(132)</item>
+        <item>5680(136)</item>
+        <item>5700(140)</item>
+        <item>5745(149)</item>
+        <item>5765(153)</item>
+        <item>5785(157)</item>
+        <item>5805(161)</item>
+        <item>5825(165)</item>
+    </string-array>
+
+    <string-array name="channels_40m">
+        <item>2422(3)</item>
+        <item>2427(4)</item>
+        <item>2432(5)</item>
+        <item>2437(6)</item>
+        <item>2442(7)</item>
+        <item>2447(8)</item>
+        <item>2452(9)</item>
+        <item>2457(10)</item>
+        <item>2462(11)</item>
+        <item>5190(38)</item>
+        <item>5210(42)</item>
+        <item>5230(46)</item>
+        <item>5250(50)</item>
+        <item>5270(54)</item>
+        <item>5290(58)</item>
+        <item>5310(62)</item>
+        <item>5510(102)</item>
+        <item>5530(106)</item>
+        <item>5550(110)</item>
+        <item>5570(114)</item>
+        <item>5590(118)</item>
+        <item>5610(122)</item>
+        <item>5630(126)</item>
+        <item>5650(130)</item>
+        <item>5670(134)</item>
+        <item>5690(138)</item>
+        <item>5710(142)</item>
+        <item>5755(151)</item>
+        <item>5775(155)</item>
+        <item>5795(159)</item>
+        <item>5815(163)</item>
+    </string-array>
+
+    <string-array name="channels_80m">
+        <item>5210(42)</item>
+        <item>5230(46)</item>
+        <item>5250(50)</item>
+        <item>5270(54)</item>
+        <item>5290(58)</item>
+        <item>5530(106)</item>
+        <item>5550(110)</item>
+        <item>5570(114)</item>
+        <item>5590(118)</item>
+        <item>5610(122)</item>
+        <item>5630(126)</item>
+        <item>5650(130)</item>
+        <item>5670(134)</item>
+        <item>5690(138)</item>
+        <item>5775(155)</item>
+        <item>5795(159)</item>
+    </string-array>
+
+    <string-array name="tx_mode">
+        <item>11b</item>
+        <item>11g</item>
+        <item>11n</item>
+        <item>11a</item>
+        <item>11ac</item>
+    </string-array>
+
+    <string-array name="tx_mode_24_20m">
+        <item>11b</item>
+        <item>11g</item>
+        <item>11n</item>
+    </string-array>
+
+    <string-array name="tx_mode_24_40m">
+        <item>11n</item>
+    </string-array>
+
+    <string-array name="tx_mode_50_20m">
+        <item>11n</item>
+        <item>11a</item>
+        <item>11ac</item>
+    </string-array>
+
+    <string-array name="tx_mode_50_40m">
+        <item>11n</item>
+        <item>11ac</item>
+    </string-array>
+
+    <string-array name="tx_mode_50_80m">
+        <item>11ac</item>
+    </string-array>
+
+    <string-array name="rates_11b">
+        <item>11B LONG 1M</item>
+        <item>11B LONG 2M</item>
+        <item>11B LONG 5.5M</item>
+        <item>11B LONG 11M</item>
+        <item>11B SHORT 2M</item>
+        <item>11B SHORT 5.5M</item>
+        <item>11B SHORT 11M</item>
+    </string-array>
+
+    <string-array name="rates_11g">
+        <item>11G 6M</item>
+        <item>11G 9M</item>
+        <item>11G 12M</item>
+        <item>11G 18M</item>
+        <item>11G 24M</item>
+        <item>11G 36M</item>
+        <item>11G 48M</item>
+        <item>11G 54M</item>
+    </string-array>
+
+    <string-array name="rates_11a">
+        <item>11A 6M</item>
+        <item>11A 9M</item>
+        <item>11A 12M</item>
+        <item>11A 18M</item>
+        <item>11A 24M</item>
+        <item>11A 36M</item>
+        <item>11A 48M</item>
+        <item>11A 54M</item>
+    </string-array>
+
+    <string-array name="rates_11n_20m">
+        <item>11n MCS0 6.5M</item>
+        <item>11n MCS1 13M</item>
+        <item>11n MCS2 19.5M</item>
+        <item>11n MCS3 26M</item>
+        <item>11n MCS4 39M</item>
+        <item>11n MCS5 52M</item>
+        <item>11n MCS6 58.5M</item>
+        <item>11n MCS7 65M</item>
+        <item>11n MCS0 MM SG 7.2M</item>
+        <item>11n MCS1 MM SG 14.4M</item>
+        <item>11n MCS2 MM SG 21.7M</item>
+        <item>11n MCS3 MM SG 28.9M</item>
+        <item>11n MCS4 MM SG 43.3M</item>
+        <item>11n MCS5 MM SG 57.8M</item>
+        <item>11n MCS6 MM SG 65M</item>
+        <item>11n MCS7 MM SG 72.2M</item>
+    </string-array>
+
+    <string-array name="rates_11n_40m">
+        <item>11n MCS0 13.5M</item>
+        <item>11n MCS1 27M</item>
+        <item>11n MCS2 40.5M</item>
+        <item>11n MCS3 54M</item>
+        <item>11n MCS4 81M</item>
+        <item>11n MCS5 108M</item>
+        <item>11n MCS6 121.5M</item>
+        <item>11n MCS7 135M</item>
+        <item>11n MCS0 MM SG 15M</item>
+        <item>11n MCS1 MM SG 30M</item>
+        <item>11n MCS2 MM SG 45M</item>
+        <item>11n MCS3 MM SG 60M</item>
+        <item>11n MCS4 MM SG 90M</item>
+        <item>11n MCS5 MM SG 120M</item>
+        <item>11n MCS6 MM SG 135M</item>
+        <item>11n MCS7 MM SG 150M</item>
+    </string-array>
+
+    <string-array name="rates_11ac_20m">
+        <item>11ac MCS0 NGI 6.5M</item>
+        <item>11ac MCS1 NGI 13M</item>
+        <item>11ac MCS2 NGI 19.5M</item>
+        <item>11ac MCS3 NGI 26M</item>
+        <item>11ac MCS4 NGI 39M</item>
+        <item>11ac MCS5 NGI 52M</item>
+        <item>11ac MCS6 NGI 58.5M</item>
+        <item>11ac MCS7 NGI 65M</item>
+        <item>11ac MCS8 NGI 78M</item>
+        <item>11ac MCS9 NGI 86.5M</item>
+        <item>11ac MCS0 SGI 7.2M</item>
+        <item>11ac MCS1 SGI 14.4M</item>
+        <item>11ac MCS2 SGI 21.6M</item>
+        <item>11ac MCS3 SGI 28.8M</item>
+        <item>11ac MCS4 SGI 43.3M</item>
+        <item>11ac MCS5 SGI 57.7M</item>
+        <item>11ac MCS6 SGI 65M</item>
+        <item>11ac MCS7 SGI 72.2M</item>
+        <item>11ac MCS8 SGI 86.6M</item>
+        <item>11ac MCS9 SGI 96.1M</item>
+    </string-array>
+
+    <string-array name="rates_11ac_40m">
+        <item>11ac MCS0 NGI 13.5M</item>
+        <item>11ac MCS1 NGI 27M</item>
+        <item>11ac MCS2 NGI 40M</item>
+        <item>11ac MCS3 NGI 54M</item>
+        <item>11ac MCS4 NGI 81M</item>
+        <item>11ac MCS5 NGI 108M</item>
+        <item>11ac MCS6 NGI 121.5M</item>
+        <item>11ac MCS7 NGI 135M</item>
+        <item>11ac MCS8 NGI 162M</item>
+        <item>11ac MCS9 NGI 180M</item>
+        <item>11ac MCS0 SGI 15M</item>
+        <item>11ac MCS1 SGI 30M</item>
+        <item>11ac MCS2 SGI 45M</item>
+        <item>11ac MCS3 SGI 60M</item>
+        <item>11ac MCS4 SGI 90M</item>
+        <item>11ac MCS5 SGI 120M</item>
+        <item>11ac MCS6 SGI 135M</item>
+        <item>11ac MCS7 SGI 150M</item>
+        <item>11ac MCS8 SGI 180M</item>
+        <item>11ac MCS9 SGI 200M</item>
+    </string-array>
+
+    <string-array name="rates_11ac_80m">
+        <item>11ac MCS0 NGI 29.3M</item>
+        <item>11ac MCS1 NGI 58.5M</item>
+        <item>11ac MCS2 NGI 78.8M</item>
+        <item>11ac MCS3 NGI 117M</item>
+        <item>11ac MCS4 NGI 175.5M</item>
+        <item>11ac MCS5 NGI 234M</item>
+        <item>11ac MCS6 NGI 263.3M</item>
+        <item>11ac MCS7 NGI 292.5M</item>
+        <item>11ac MCS8 NGI 351M</item>
+        <item>11ac MCS9 NGI 390M</item>
+        <item>11ac MCS0 SGI 32.5M</item>
+        <item>11ac MCS1 SGI 65M</item>
+        <item>11ac MCS2 SGI 97.5M</item>
+        <item>11ac MCS3 SGI 130M</item>
+        <item>11ac MCS4 SGI 195M</item>
+        <item>11ac MCS5 SGI 260M</item>
+        <item>11ac MCS6 SGI 292.5M</item>
+        <item>11ac MCS7 SGI 325M</item>
+        <item>11ac MCS8 SGI 390M</item>
+        <item>11ac MCS9 SGI 433.3M</item>
+    </string-array>
+
+    <string-array name="package_len">
+        <item>1000</item>
+        <item>2000</item>
+        <item>3000</item>
+        <item>4000</item>
+    </string-array>
+
+    <string-array name="mcs">
+        <item>0</item>
+        <item>1</item>
+        <item>2</item>
+        <item>3</item>
+        <item>4</item>
+        <item>5</item>
+        <item>6</item>
+        <item>7</item>
+    </string-array>
+
+    <string-array name="power">
+        <item>fixed</item>
+        <item>10db</item>
+        <item>11db</item>
+        <item>12db</item>
+        <item>13db</item>
+        <item>14db</item>
+        <item>15db</item>
+        <item>16db</item>
+        <item>17db</item>
+        <item>18db</item>
+        <item>19db</item>
+        <item>20db</item>
+        <item>21db</item>
+        <item>22db</item>
+    </string-array>
+    <string-array name="wifi_wave_channel">
+        <item>2412(1)</item>
+        <item>2417(2)</item>
+        <item>2422(3)</item>
+        <item>2427(4)</item>
+        <item>2432(5)</item>
+        <item>2437(6)</item>
+        <item>2442(7)</item>
+        <item>2447(8)</item>
+        <item>2452(9)</item>
+        <item>2457(10)</item>
+        <item>2462(11)</item>
+        <item>2467(12)</item>
+        <item>2472(13)</item>
+    </string-array>
+    <string-array name="wifi_wave_digital_gain">
+        <item>-39</item>
+        <item>-37</item>
+        <item>-35</item>
+        <item>-33</item>
+        <item>-31</item>
+        <item>-29</item>
+        <item>-27</item>
+        <item>-25</item>
+        <item>-23</item>
+        <item>-21</item>
+        <item>-19</item>
+        <item>-17</item>
+        <item>-15</item>
+        <item>-13</item>
+        <item>-11</item>
+        <item>-9</item>
+        <item>-7</item>
+        <item>-5</item>
+        <item>-3</item>
+        <item>-1</item>
+        <item>0</item>
+        <item>1</item>
+        <item>3</item>
+        <item>5</item>
+        <item>7</item>
+        <item>9</item>
+        <item>11</item>
+        <item>13</item>
+        <item>15</item>
+        <item>17</item>
+        <item>19</item>
+        <item>21</item>
+        <item>23</item>
+        <item>24</item>
+    </string-array>
+    <string-array name="wifi_wave_rf_gain">
+        <item>0</item>
+        <item>1</item>
+        <item>2</item>
+        <item>3</item>
+        <item>4</item>
+        <item>5</item>
+        <item>6</item>
+        <item>7</item>
+        <item>8</item>
+        <item>9</item>
+        <item>10</item>
+        <item>11</item>
+        <item>12</item>
+        <item>13</item>
+        <item>14</item>
+        <item>15</item>
+        <item>16</item>
+        <item>17</item>
+        <item>18</item>
+        <item>19</item>
+        <item>20</item>
+        <item>21</item>
+        <item>22</item>
+        <item>23</item>
+        <item>24</item>
+        <item>25</item>
+        <item>26</item>
+        <item>27</item>
+        <item>28</item>
+        <item>29</item>
+        <item>30</item>
+        <item>31</item>
+    </string-array>
+</resources>

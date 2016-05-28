@@ -1,0 +1,133 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+================================================================================
+|                                                                 Date:10/2012 |
+|                                 PRESENTATION                                 |
+|                                                                              |
+|        Copyright 2012 TCL Communication Technology Holdings Limited.         |
+|                                                                              |
+| This material is company confidential, cannot be reproduced in any form      |
+| without the written permission of TCL Communication Technology Holdings      |
+| Limited.                                                                     |
+|                                                                              |
+| **************************************************************************** |
+|  Author :  Chen Ji                                                           |
+|  Email  :  Ji.Chen@tcl-mobile.com                                            |
+|  Role   :                                                                    |
+|  Reference documents : refer bugID200662/161302                              |
+| **************************************************************************** |
+|  Comments :                                                                  |
+|  File     : development/apps/WLANTestMode                                    |
+|  Labels   :                                                                  |
+| **************************************************************************** |
+| ============================================================================ |
+|      Modifications on Features list / Changes Request / Problems Report      |
+| **************************************************************************** |
+|    date   |        author        |         Key          |      comment       |
+| **********|**********************|**********************|******************* |
+| 10/22/2012|Chen Ji               |bugID321787           |AndroidMainfest.xml |
+|           |                      |                      | file is needed by  |
+|           |                      |                      |WLan app            |
+| **********|**********************|**********************|******************* |
+================================================================================
+-->
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.android.WLANTestMode" >
+
+    <uses-permission android:name="android.permission.ACCESS_SURFACE_FLINGER" />
+    <uses-permission android:name="android.permission.WRITE_SETTINGS" />
+    <uses-permission android:name="android.permission.WRITE_SECURE_SETTINGS" />
+    <uses-permission android:name="android.permission.DEVICE_POWER" />
+    <uses-permission android:name="android.permission.CHANGE_CONFIGURATION" />
+    <uses-permission android:name="android.permission.MOUNT_UNMOUNT_FILESYSTEMS" />
+    <uses-permission android:name="android.permission.VIBRATE" />
+    <uses-permission android:name="android.permission.BLUETOOTH" />
+    <uses-permission android:name="android.permission.BLUETOOTH_ADMIN" />
+    <uses-permission android:name="android.permission.HARDWARE_TEST" />
+    <uses-permission android:name="android.permission.FACTORY_TEST" />
+    <uses-permission android:name="android.permission.CALL_PHONE" />
+    <uses-permission android:name="android.permission.CALL_PRIVILEGED" />
+    <uses-permission android:name="android.permission.MODIFY_AUDIO_SETTINGS" />
+    <uses-permission android:name="android.permission.MASTER_CLEAR" />
+    <uses-permission android:name="android.permission.ACCESS_DOWNLOAD_MANAGER" />
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
+    <uses-permission android:name="android.permission.CHANGE_WIFI_STATE" />
+    <uses-permission android:name="android.permission.CLEAR_APP_USER_DATA" />
+    <uses-permission android:name="android.permission.READ_PHONE_STATE" />
+    <uses-permission android:name="android.permission.MODIFY_PHONE_STATE" />
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+    <uses-permission android:name="android.permission.WRITE_APN_SETTINGS" />
+    <uses-permission android:name="android.permission.ACCESS_CHECKIN_PROPERTIES" />
+    <uses-permission android:name="android.permission.RESTART_PACKAGES" />
+    <uses-permission android:name="android.permission.PACKAGE_USAGE_STATS" />
+    <uses-permission android:name="android.permission.BATTERY_STATS" />
+    <uses-permission android:name="com.android.launcher.permission.READ_SETTINGS" />
+    <uses-permission android:name="com.android.launcher.permission.WRITE_SETTINGS" />
+    <uses-permission android:name="android.permission.CAMERA" />
+    <uses-permission android:name="android.permission.RECORD_AUDIO" />
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.WAKE_LOCK" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+
+    <application
+        android:icon="@drawable/icon"
+        android:label="@string/app_name"
+        android:theme="@android:style/Theme.Holo.Light" >
+        <activity
+            android:name="com.android.WLANTestMode.WLANTestMode"
+            android:label="@string/app_name" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <!-- <category android:name="android.intent.category.LAUNCHER" /> -->
+            </intent-filter>
+        </activity>
+
+        <receiver android:name="com.android.WLANTestMode.TestModeReceiver" >
+
+            <!-- WLANTestMode, *#*#364463#*#* -->
+            <intent-filter>
+                <action android:name="android.provider.Telephony.SECRET_CODE" />
+
+                <data
+                    android:host="364463"
+                    android:scheme="android_secret_code" />
+            </intent-filter>
+
+            <!-- Bluetooth Test Mode, *#*#364364#*#* -->
+            <!--
+          <intent-filter>
+            <action android:name="android.provider.Telephony.SECRET_CODE" />
+            <data android:scheme="android_secret_code" android:host="364364" />
+          </intent-filter>
+            -->
+
+        </receiver>
+
+        <activity
+            android:name="com.android.WLANTestMode.WLANTestModeBG"
+            android:label="WLAN BG Test Mode"
+            android:screenOrientation="portrait" >
+        </activity>
+        <activity
+            android:name="com.android.WLANTestMode.WLANTestModeN"
+            android:label="WLAN N Test Mode"
+            android:screenOrientation="portrait" >
+        </activity>
+        <activity
+            android:name="com.android.WLANTestMode.WLANTestModeReceive"
+            android:label="WLAN RX Test Mode"
+            android:screenOrientation="portrait" >
+        </activity>
+        <activity
+            android:name="com.android.WLANTestMode.WLANTestModeUnMod"
+            android:label="WLAN TX UnMod Test Mode"
+            android:screenOrientation="portrait" >
+        </activity>
+        <activity
+            android:name="com.android.WLANTestMode.WLANTestModeWaveGenerator"
+            android:label="@string/wifi_wave_generator"
+            android:screenOrientation="portrait" >
+        </activity>
+    </application>
+</manifest>

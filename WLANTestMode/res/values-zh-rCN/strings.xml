@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+================================================================================
+|                                                                 Date:10/2012 |
+|                                 PRESENTATION                                 |
+|                                                                              |
+|        Copyright 2012 TCL Communication Technology Holdings Limited.         |
+|                                                                              |
+| This material is company confidential, cannot be reproduced in any form      |
+| without the written permission of TCL Communication Technology Holdings      |
+| Limited.                                                                     |
+|                                                                              |
+| **************************************************************************** |
+|  Author :  Chen Ji                                                           |
+|  Email  :  Ji.Chen@tcl-mobile.com                                            |
+|  Role   :                                                                    |
+|  Reference documents : refer bugID200662/161302                              |
+| **************************************************************************** |
+|  Comments :                                                                  |
+|  File     : development/apps/WLANTestMode/res/values                         |
+|  Labels   :                                                                  |
+| **************************************************************************** |
+| ============================================================================ |
+|      Modifications on Features list / Changes Request / Problems Report      |
+| **************************************************************************** |
+|    date   |        author        |         Key          |      comment       |
+| **********|**********************|**********************|******************* |
+| 10/22/2012|Chen Ji               |bugID321787           |strings.xml file is |
+|           |                      |                      | needed by WLAN app |
+| **********|**********************|**********************|******************* |
+================================================================================
+-->
+<resources>
+    <string name="app_name">WLAN 测试</string>
+    <string name="WiFi_Channel_Text">信道</string>
+    <string name="WiFi_MCS_Text">MCS</string>
+    <string name="WiFi_Rate_Text">速率</string>
+    <string name="WiFi_Power_Text">功率</string>
+    <string name="WiFi_Start">开始</string>
+    <string name="WiFi_Stop">停止</string>
+    <string name="WiFi_IP_addr_text">IP 地址:</string>
+    <string name="WiFi_AP_SSID">网络 SSID:</string>
+    <string name="WiFi_receive">重连</string>
+    <string name="WiFi_report">WLAN 报告</string>
+    <string name="wifi_tx_mode">WLAN 发送模式</string>
+    <string name="wifi_signal_mode">WLAN 信令模式</string>
+    <string name="wifi_rx_mode">WLAN 接收模式</string>
+    <string name="wifi_unmodem_mode">WLAN TX 无调解模式</string>
+</resources>

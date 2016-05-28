@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+================================================================================
+|                                                                 Date:10/2012 |
+|                                 PRESENTATION                                 |
+|                                                                              |
+|        Copyright 2012 TCL Communication Technology Holdings Limited.         |
+|                                                                              |
+| This material is company confidential, cannot be reproduced in any form      |
+| without the written permission of TCL Communication Technology Holdings      |
+| Limited.                                                                     |
+|                                                                              |
+| **************************************************************************** |
+|  Author :  Chen Ji                                                           |
+|  Email  :  Ji.Chen@tcl-mobile.com                                            |
+|  Role   :                                                                    |
+|  Reference documents : refer bugID200662/161302                              |
+| **************************************************************************** |
+|  Comments :                                                                  |
+|  File     : development/apps/WLANTestMode/res/layout                         |
+|  Labels   :                                                                  |
+| **************************************************************************** |
+| ============================================================================ |
+|      Modifications on Features list / Changes Request / Problems Report      |
+| **************************************************************************** |
+|    date   |        author        |         Key          |      comment       |
+| **********|**********************|**********************|******************* |
+| 10/22/2012|Chen Ji               |bugID321787           |unmodem.xml file is |
+|           |                      |                      | needed by WLAN app |
+| **********|**********************|**********************|******************* |
+================================================================================
+-->
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="fill_parent"
+    android:layout_height="wrap_content">
+    <LinearLayout android:id="@+id/LinearLayout"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <TextView android:text="@string/WiFi_Channel_Text"
+                android:id="@+id/WiFi_Channel_Text"
+                android:layout_width="80dip"
+                android:layout_height="wrap_content"
+                android:paddingTop="10dip"></TextView>
+        <Spinner android:id="@+id/WiFi_Channel_Spinner"
+                android:layout_height="wrap_content"
+                android:layout_width="240dip"></Spinner>
+    </LinearLayout>
+
+    <LinearLayout android:id="@+id/LinearLayout"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_marginLeft="80dip">
+
+        <Button android:text="@string/WiFi_Start"
+            android:id="@+id/WiFi_Start"
+            android:layout_width="120dip"
+            android:layout_height="wrap_content"></Button>
+        <Button android:text="@string/WiFi_Stop"
+            android:id="@+id/WiFi_Stop"
+            android:layout_width="120dip"
+            android:layout_height="wrap_content"></Button>
+
+    </LinearLayout>
+</LinearLayout>

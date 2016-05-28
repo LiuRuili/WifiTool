@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+================================================================================
+|                                                                 Date:10/2012 |
+|                                 PRESENTATION                                 |
+|                                                                              |
+|        Copyright 2012 TCL Communication Technology Holdings Limited.         |
+|                                                                              |
+| This material is company confidential, cannot be reproduced in any form      |
+| without the written permission of TCL Communication Technology Holdings      |
+| Limited.                                                                     |
+|                                                                              |
+| **************************************************************************** |
+|  Author :  Chen Ji                                                           |
+|  Email  :  Ji.Chen@tcl-mobile.com                                            |
+|  Role   :                                                                    |
+|  Reference documents : refer bugID200662/161302                              |
+| **************************************************************************** |
+|  Comments :                                                                  |
+|  File     : development/apps/WLANTestMode/res/values                         |
+|  Labels   :                                                                  |
+| **************************************************************************** |
+| ============================================================================ |
+|      Modifications on Features list / Changes Request / Problems Report      |
+| **************************************************************************** |
+|    date   |        author        |         Key          |      comment       |
+| **********|**********************|**********************|******************* |
+| 10/22/2012|Chen Ji               |bugID321787           |strings.xml file is |
+|           |                      |                      | needed by WLAN app |
+| **********|**********************|**********************|******************* |
+================================================================================
+-->
+<resources>
+
+    <string name="app_name">WCN WLANTestMode</string>
+    <string name="WiFi_Channel_Text">Channel</string>
+    <string name="WiFi_MCS_Text">MCS</string>
+    <string name="WiFi_Rate_Text">Rate</string>
+    <string name="WiFi_Power_Text">Power</string>
+    <string name="WiFi_Start">Start</string>
+    <string name="WiFi_Stop">Stop</string>
+    <string name="WiFi_IP_addr_text">IP Addr:</string>
+    <string name="WiFi_AP_SSID">Network SSID:</string>
+    <string name="WiFi_receive">Reconnect</string>
+    <string name="WiFi_report">WLAN_report</string>
+    <string name="wifi_tx_mode">WLAN TX Test Mode</string>
+    <string name="wifi_signal_mode">WLAN Signaling mode</string>
+    <string name="wifi_rx_mode">WLAN RX Test Mode</string>
+    <string name="wifi_unmodem_mode">WLAN TX UnModem Test Mode</string>
+    <string name="wifi_wave_generator">WLAN Wave Generator Mode</string>
+    <string name="title_activity_wlantest_mode_wave_generator">WLANTestModeWaveGenerator</string>
+    <string name="action_settings">Settings</string>
+    <string name="wifi_wave_digital_gain">Digital Gain</string>
+    <string name="wifi_wave_rf_gain">RF Gain</string>
+    <string name="WiFi_Channel_Bonding_Text">Channel Bonding</string>
+    <string name="WiFi_pkglen">Packge Length</string>
+    <string name="WiFi_Power_cntl_mode">Power Cntl Mode</string>
+    <string name="WiFi_TX_mode">Mode</string>
+</resources>
