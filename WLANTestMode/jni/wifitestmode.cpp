@@ -1,37 +1,3 @@
-/******************************************************************************/
-/*                                                               Date:10/2012 */
-/*                                PRESENTATION                                */
-/*                                                                            */
-/*       Copyright 2012 TCL Communication Technology Holdings Limited.        */
-/*                                                                            */
-/* This material is company confidential, cannot be reproduced in any form    */
-/* without the written permission of TCL Communication Technology Holdings    */
-/* Limited.                                                                   */
-/*                                                                            */
-/* -------------------------------------------------------------------------- */
-/*  Author :  Chen Ji                                                         */
-/*  Email  :  Ji.Chen@tcl-mobile.com                                          */
-/*  Role   :                                                                  */
-/*  Reference documents : refer bugID200662/161302                            */
-/* -------------------------------------------------------------------------- */
-/*  Comments :                                                                */
-/*  File     : development/apps/WLANTestMode                                  */
-/*  Labels   :                                                                */
-/* -------------------------------------------------------------------------- */
-/* ========================================================================== */
-/*     Modifications on Features list / Changes Request / Problems Report     */
-/* -------------------------------------------------------------------------- */
-/*    date   |        author        |         Key          |     comment      */
-/* ----------|----------------------|----------------------|----------------- */
-/* 10/22/2012|Chen Ji               |bugID321787           |jni methods are d */
-/*           |                      |                      |efined in this fi */
-/*           |                      |                      |le                */
-/* ----------|----------------------|----------------------|----------------- */
-/* 11/23/2012|Chen Ji               |bugID329061           |jni methods are d */
-/*           |                      |                      |efined in this fi */
-/*           |                      |                      |le                */
-/* ----------|----------------------|----------------------|----------------- */
-/******************************************************************************/
 
 #include <utils/Log.h>
 
@@ -45,6 +11,7 @@
 #include <errno.h>
 #include <string.h>
 #include "jni.h"
+#include <ScopedUtfChars.h> //[DEGUB] MOD BY TCTNB.Ruili.Liu 1885375 20160431 Add SSID and IP item to WifiTestMode
 
 static int wifi_testmode_set(const char* value, const char* path) {
     int sz;
@@ -94,7 +61,7 @@ static jint wifi_testmode_set_type(JNIEnv *env, jobject object, jint value)
 
 static jint wifi_testmode_set_power(JNIEnv *env, jobject object, jint value)
 {
-    char * power[] = {"00","10","11","12","13","14","15","16","17","18","19","20","21","22"};
+    char * power[] = {"00","10","11","12","13","14","15","16","17","18","19","20"};
     int ret = -1;
 
     ret = wifi_testmode_set((const char *)power[value], "/data/wl/power");
@@ -120,7 +87,11 @@ static jint wifi_testmode_set_rfgain(JNIEnv *env, jobject object, jint value) {
 
 static jint wifi_testmode_set_channel_bw(JNIEnv *env, jobject object, jint bw, jint value)
 {
-    char * channel[][48] = {{"1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12", "13", "36", "40", "44", "48", "52", "56", "60", "64","100", "104","108","112", "116","120","124","128","132","136","140","149","153","157", "161","165"},
+    char * channel[][48] = {{"1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12", "13"},
+	{"1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12", "13", "36", "40", "44", "48", "52", "56", "60", "64","100", "104","108","112", "116","120","124","128","132","136","140","149","153","157", "161","165"},
+    {"3", "4", "5", "6", "7", "8", "9", "10", "11", "38", "42", "46", "50", "54", "58", "62", "102", "106", "110", "114", "118", "122", "126", "130", "134", "138", "142", "151", "155", "159", "163"},
+    {"1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12", "13"},
+	{"1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12", "13", "36", "40", "44", "48", "52", "56", "60", "64","100", "104","108","112", "116","120","124","128","132","136","140","149","153","157", "161","165"},
     {"3", "4", "5", "6", "7", "8", "9", "10", "11", "38", "42", "46", "50", "54", "58", "62", "102", "106", "110", "114", "118", "122", "126", "130", "134", "138", "142", "151", "155", "159", "163"},
     {"42", "46", "50", "54", "58", "106", "110", "114", "118", "122", "126", "130", "134", "138", "155", "159"}};
     int ret = -1;
@@ -132,7 +103,7 @@ static jint wifi_testmode_set_channel_bw(JNIEnv *env, jobject object, jint bw, j
 
 static jint wifi_testmode_set_channel_bonding(JNIEnv *env, jobject object, jint value)
 {
-    char * channelBongding[] = {"0", "1", "2", "3", "4", "5", "6", "7", "8", "9", "10"};
+    char * channelBongding[] = {"0", "1", "2", "3", "4", "5", "6"};
     int ret = -1;
 
     ret = wifi_testmode_set((const char *)channelBongding[value], "/data/wl/channel_bonding");
@@ -140,27 +111,23 @@ static jint wifi_testmode_set_channel_bonding(JNIEnv *env, jobject object, jint 
     return ret;
 }
 
-static jint wifi_testmode_set_rate_bw(JNIEnv *env, jobject object, jint bw , jint mode , jint value)
+static jint wifi_testmode_set_rate_bw(JNIEnv *env, jobject object, jint bw , jint value)
 {
-    char * rate11b[] = {"11B_LONG_1_MBPS", "11B_LONG_2_MBPS", "11B_LONG_5_5_MBPS", "11B_LONG_11_MBPS", "11B_SHORT_2_MBPS", "11B_SHORT_5_5_MBPS","11B_SHORT_11_MBPS"};
-    char * rate11ag[] = {"11A_6_MBPS", "11A_9_MBPS", "11A_12_MBPS", "11A_18_MBPS","11A_24_MBPS", "11A_36_MBPS", "11A_48_MBPS", "11A_54_MBPS"};
-    char * rate11n[2][16] = {{"MCS_6_5_MBPS","MCS_13_MBPS", "MCS_19_5_MBPS", "MCS_26_MBPS", "MCS_39_MBPS", "MCS_52_MBPS","MCS_58_5_MBPS", "MCS_65_MBPS","MCS_SG_7_2_MBPS","MCS_SG_14_4_MBPS","MCS_SG_21_7_MBPS","MCS_SG_28_9_MBPS","MCS_SG_43_3_MBPS","MCS_SG_57_8_MBPS","MCS_SG_65_MBPS","MCS_SG_72_2_MBPS"},
-                           {"MCS_CB_13_5_MBPS", "MCS_CB_27_MBPS", "MCS_CB_40_5_MBPS", "MCS_CB_54_MBPS", "MCS_CB_81_MBPS", "MCS_CB_108_MBPS", "MCS_CB_121_5_MBPS", "MCS_CB_135_MBPS", "MCS_CB_15_MBPS", "MCS_CB_30_MBPS","MCS_CB_45_MBPS", "MCS_CB_60_MBPS", "MCS_CB_90_MBPS", "MCS_CB_120_MBPS", "MCS_CB_135_MBPS", "MCS_CB_150_MBPS"}};
-    char * rate11ac[3][20] = {{"MCS_VHT20_NGI_6_5_MBPS","MCS_VHT20_NGI_13_MBPS","MCS_VHT20_NGI_19_5_MBPS","MCS_VHT20_NGI_26_MBPS","MCS_VHT20_NGI_39_MBPS","MCS_VHT20_NGI_52_MBPS","MCS_VHT20_NGI_58_5_MBPS","MCS_VHT20_NGI_65_MBPS","MCS_VHT20_NGI_78_MBPS","MCS_VHT20_NGI_86_5_MBPS","MCS_VHT20_SGI_7_2_MBPS","MCS_VHT20_SGI_14_4_MBPS", "MCS_VHT20_SGI_21_6_MBPS", "MCS_VHT20_SGI_28_8_MBPS", "MCS_VHT20_SGI_43_3_MBPS", "MCS_VHT20_SGI_57_7_MBPS", "MCS_VHT20_SGI_65_MBPS", "MCS_VHT20_SGI_72_2_MBPS", "MCS_VHT20_SGI_86_6_MBPS", "MCS_VHT20_SGI_96_1_MBPS"},
-                              {"MCS_VHT40_NGI_CB_13_5_MBPS", "MCS_VHT40_NGI_CB_27_MBPS", "MCS_VHT40_NGI_CB_40_5_MBPS", "MCS_VHT40_NGI_CB_54_MBPS", "MCS_VHT40_NGI_CB_81_MBPS", "MCS_VHT40_NGI_CB_108_MBPS", "MCS_VHT40_NGI_CB_121_5_MBPS","MCS_VHT40_NGI_CB_135_MBPS", "MCS_VHT40_NGI_CB_162_MBPS", "MCS_VHT40_NGI_CB_180_MBPS","MCS_VHT40_SGI_CB_15_MBPS", "MCS_VHT40_SGI_CB_30_MBPS", "MCS_VHT40_SGI_CB_45_MBPS", "MCS_VHT40_SGI_CB_60_MBPS", "MCS_VHT40_SGI_CB_90_MBPS", "MCS_VHT40_SGI_CB_120_MBPS","MCS_VHT40_SGI_CB_135_MBPS", "MCS_VHT40_SGI_CB_150_MBPS", "MCS_VHT40_SGI_CB_180_MBPS", "MCS_VHT40_SGI_CB_200_MBPS"},
-                              {"MCS_VHT80_NGI_CB_29_3_MBPS", "MCS_VHT80_NGI_CB_58_5_MBPS", "MCS_VHT80_NGI_CB_87_8_MBPS", "MCS_VHT80_NGI_CB_117_MBPS", "MCS_VHT80_NGI_CB_175_5_MBPS","MCS_VHT80_NGI_CB_234_MBPS", "MCS_VHT80_NGI_CB_263_3_MBPS", "MCS_VHT80_NGI_CB_292_5_MBPS", "MCS_VHT80_NGI_CB_351_MBPS", "MCS_VHT80_NGI_CB_390_MBPS","MCS_VHT80_SGI_CB_32_5_MBPS", "MCS_VHT80_SGI_CB_65_MBPS", "MCS_VHT80_SGI_CB_97_5_MBPS", "MCS_VHT80_SGI_CB_130_MBPS", "MCS_VHT80_SGI_CB_195_MBPS","MCS_VHT80_SGI_CB_260_MBPS", "MCS_VHT80_SGI_CB_292_5_MBPS", "MCS_VHT80_SGI_CB_325_MBPS", "MCS_VHT80_SGI_CB_390_MBPS", "MCS_VHT80_SGI_CB_433_3_MBPS"}};                       
+    char * rate11b[] = {"1", "2", "3", "6"};
+    char * rate11g[] = {"4", "5", "7", "8", "10", "12", "13", "14"};
+    char * rate11n[] = {"15", "16", "17", "18", "19", "20", "21", "22"};
+    char * rate11ac[] = {"15", "16", "17", "18", "19", "20", "21", "22", "23", "24"};
 
     int ret = -1;
-    if (mode == 0) {
+    if (bw == 0) {
+        ret = wifi_testmode_set((const char *)rate11g[value], "/data/wl/rate");
+    } else if (bw == 6) {
+        ret = wifi_testmode_set((const char *)rate11ac[value], "/data/wl/rate");
+    } else if (bw == 3) {
         ret = wifi_testmode_set((const char *)rate11b[value], "/data/wl/rate");
-    } else if (mode == 1) {
-        ret = wifi_testmode_set((const char *)rate11ag[value], "/data/wl/rate");
-    } else if (mode == 2) {
-        ret = wifi_testmode_set((const char *)rate11n[bw][value], "/data/wl/rate");
-    } else if (mode == 3) {
-        ret = wifi_testmode_set((const char *)rate11ac[bw][value], "/data/wl/rate");
-    }
-
+    } else {
+        ret = wifi_testmode_set((const char *)rate11n[value], "/data/wl/rate");
+	}
     return ret;
 }
 
@@ -172,11 +139,35 @@ static jint wifi_testmode_set_txpkglen(JNIEnv *env, jobject object, jint len) {
 }
 
 static jint wifi_testmode_set_power_cntl_mode(JNIEnv *env, jobject object, jint value) {
-    char * power_cntl_mode[] = {"1","2"};
+    char * power_cntl_mode[] = {"0","1","2"};
     int ret = -1;
     ret = wifi_testmode_set(power_cntl_mode[value],"data/wl/power_cntl");
     return ret;
 }
+
+//[DEGUB] ADD-BEGIN BY TCTNB.Ruili.Liu 1885375 20160431 Add SSID and IP item to WifiTestMode
+static jint wifi_testmode_set_ssid(JNIEnv *env, jobject object, jstring value) {
+    ScopedUtfChars command(env, value);
+    const char *ssid = command.c_str();
+    if (ssid == NULL) {
+        return 0;
+    }
+    int ret = -1;
+    ret = wifi_testmode_set((char *)command.c_str(),"data/wl/ssid");
+    return ret;
+}
+
+static jint wifi_testmode_set_ip(JNIEnv *env, jobject object, jstring value) {
+    ScopedUtfChars command(env, value);
+    const char *ip = command.c_str();
+    if (ip == NULL) {
+        return 0;
+    }
+    int ret = -1;
+    ret = wifi_testmode_set((char *)command.c_str(),"data/wl/ip");
+    return ret;
+}
+//[DEGUB] ADD-END BY TCTNB.Ruili.Liu
 
 static JNINativeMethod methods[] = {
     {"wifi_testmode_set_channel", "(I)I", (void*)wifi_testmode_set_channel },
@@ -186,9 +177,13 @@ static JNINativeMethod methods[] = {
     {"wifi_testmode_set_rfgain","(I)I", (void*)wifi_testmode_set_rfgain },
     {"wifi_testmode_set_channel_bonding","(I)I", (void*)wifi_testmode_set_channel_bonding },
     {"wifi_testmode_set_channel_bw", "(II)I", (void*)wifi_testmode_set_channel_bw },
-    {"wifi_testmode_set_rate_bw", "(III)I", (void*)wifi_testmode_set_rate_bw },
+    {"wifi_testmode_set_rate_bw", "(II)I", (void*)wifi_testmode_set_rate_bw },
     {"wifi_testmode_set_txpkglen","(I)I", (void*)wifi_testmode_set_txpkglen },
-    {"wifi_testmode_set_power_cntl_mode","(I)I", (void*)wifi_testmode_set_power_cntl_mode }
+    //[DEGUB] ADD-BEGIN BY TCTNB.Ruili.Liu 1885375 20160431 Add SSID and IP item to WifiTestMode
+    {"wifi_testmode_set_power_cntl_mode","(I)I", (void*)wifi_testmode_set_power_cntl_mode },
+    {"wifi_testmode_set_ssid","(Ljava/lang/String;)I", (void*)wifi_testmode_set_ssid },
+    {"wifi_testmode_set_ip","(Ljava/lang/String;)I", (void*)wifi_testmode_set_ip }
+    //[DEGUB] ADD-END BY TCTNB.Ruili.Liu
 };
 
 

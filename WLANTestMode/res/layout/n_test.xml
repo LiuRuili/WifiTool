@@ -36,6 +36,36 @@
     android:layout_width="fill_parent"
     android:layout_height="wrap_content">
 
+    <LinearLayout android:id="@+id/EditText_SSID"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+        <TextView android:text="@string/WiFi_N_SSID"
+                android:layout_width="80dip"
+                android:layout_height="wrap_content"
+                android:textStyle="bold"
+                android:paddingTop="10dip"></TextView>
+        <EditText android:id="@+id/WiFi_N_SSID_edittext"
+                android:layout_height="wrap_content"
+                android:layout_width="240dip"></EditText>
+
+    </LinearLayout>
+
+    <LinearLayout android:id="@+id/EditText_IP"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+        <TextView android:text="@string/WiFi_N_IP"
+                android:layout_width="80dip"
+                android:layout_height="wrap_content"
+                android:textStyle="bold"
+                android:paddingTop="10dip"></TextView>
+        <EditText android:id="@+id/EditText_IP_edittext"
+                android:layout_height="wrap_content"
+                android:layout_width="240dip"></EditText>
+
+    </LinearLayout>
+
     <LinearLayout android:id="@+id/LinearLayout"
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"

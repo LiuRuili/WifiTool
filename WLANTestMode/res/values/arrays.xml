@@ -33,167 +33,180 @@
 <resources>
 
     <string-array name="power_cntl_mode">
+        <item>Open Loop</item>
         <item>SCPC</item>
         <item>CLPC</item>
     </string-array>
 
     <string-array name="channel_bonding">
-        <item>None</item>
-        <item>40M primary low</item>
-        <item>40M primary center</item>
-        <item>40M primary high</item>
-        <item>80M 20/40 Low 40/80 center</item>
-        <item>80M 20/40 center 40/80 center</item>
-        <item>80M 20/40 high 40/80 center</item>
-        <item>80M 20/40 low 40/80 low</item>
-        <item>80M 20/40 high 40/80 low</item>
-        <item>80M 20/40 low 40/80 high</item>
-        <item>80M 20/40 high 40/80 high</item>
+        <item>NOHT</item>
+        <item>HT20</item>
+        <item>HT40PLUS</item>
+        <item>CCK</item>
+        <item>VHT20</item>
+        <item>VHT40PLUS</item>
+        <item>VHT80</item>
     </string-array>
 
     <!-- Used in Spinner/spinner_2.java -->
     <string-array name="channels">
-        <item>2412(1)</item>
-        <item>2417(2)</item>
-        <item>2422(3)</item>
-        <item>2427(4)</item>
-        <item>2432(5)</item>
-        <item>2437(6)</item>
-        <item>2442(7)</item>
-        <item>2447(8)</item>
-        <item>2452(9)</item>
-        <item>2457(10)</item>
-        <item>2462(11)</item>
-        <item>2467(12)</item>
-        <item>2472(13)</item>
-        <item>5180(36)</item>
-        <item>5200(40)</item>
-        <item>5220(44)</item>
-        <item>5240(48)</item>
-        <item>5260(52)</item>
-        <item>5280(56)</item>
-        <item>5300(60)</item>
-        <item>5320(64)</item>
-        <item>5500(100)</item>
-        <item>5520(104)</item>
-        <item>5540(108)</item>
-        <item>5560(112)</item>
-        <item>5580(116)</item>
-        <item>5600(120)</item>
-        <item>5620(124)</item>
-        <item>5640(128)</item>
-        <item>5660(132)</item>
-        <item>5680(136)</item>
-        <item>5700(140)</item>
-        <item>5745(149)</item>
-        <item>5765(153)</item>
-        <item>5785(157)</item>
-        <item>5805(161)</item>
-        <item>5825(165)</item>
-        <item>5190(38)</item>
-        <item>5230(46)</item>
-        <item>5270(54)</item>
-        <item>5310(62)</item>
-        <item>5510(102)</item>
-        <item>5550(110)</item>
-        <item>5590(118)</item>
-        <item>5630(126)</item>
-        <item>5670(134)</item>
-        <item>5755(151)</item>
-        <item>5795(159)</item>
+        <item>2412000(1)</item>
+        <item>2417000(2)</item>
+        <item>2422000(3)</item>
+        <item>2427000(4)</item>
+        <item>2432000(5)</item>
+        <item>2437000(6)</item>
+        <item>2442000(7)</item>
+        <item>2447000(8)</item>
+        <item>2452000(9)</item>
+        <item>2457000(10)</item>
+        <item>2462000(11)</item>
+        <item>2467000(12)</item>
+        <item>2472000(13)</item>
+        <item>5180000(36)</item>
+        <item>5200000(40)</item>
+        <item>5220000(44)</item>
+        <item>5240000(48)</item>
+        <item>5260000(52)</item>
+        <item>5180000(56)</item>
+        <item>5300000(60)</item>
+        <item>5320000(64)</item>
+        <item>5500000(100)</item>
+        <item>5520000(104)</item>
+        <item>5540000(108)</item>
+        <item>5560000(112)</item>
+        <item>5580000(116)</item>
+        <item>5600000(120)</item>
+        <item>5620000(124)</item>
+        <item>5640000(128)</item>
+        <item>5660000(132)</item>
+        <item>5680000(136)</item>
+        <item>5700000(140)</item>
+        <item>5745000(149)</item>
+        <item>5765000(153)</item>
+        <item>5785000(157)</item>
+        <item>5805000(161)</item>
+        <item>5825000(165)</item>
+        <item>5190000(38)</item>
+        <item>5230000(46)</item>
+        <item>5270000(54)</item>
+        <item>5310000(62)</item>
+        <item>5510000(102)</item>
+        <item>5550000(110)</item>
+        <item>5590000(118)</item>
+        <item>5630000(126)</item>
+        <item>5670000(134)</item>
+        <item>5755000(151)</item>
+        <item>5795000(159)</item>
+    </string-array>
+
+    <string-array name="channels_24G">
+        <item>2412000(1)</item>
+        <item>2417000(2)</item>
+        <item>2422000(3)</item>
+        <item>2427000(4)</item>
+        <item>2432000(5)</item>
+        <item>2437000(6)</item>
+        <item>2442000(7)</item>
+        <item>2447000(8)</item>
+        <item>2452000(9)</item>
+        <item>2457000(10)</item>
+        <item>2462000(11)</item>
+        <item>2467000(12)</item>
+        <item>2472000(13)</item>
     </string-array>
 
     <string-array name="channels_20m">
-        <item>2412(1)</item>
-        <item>2417(2)</item>
-        <item>2422(3)</item>
-        <item>2427(4)</item>
-        <item>2432(5)</item>
-        <item>2437(6)</item>
-        <item>2442(7)</item>
-        <item>2447(8)</item>
-        <item>2452(9)</item>
-        <item>2457(10)</item>
-        <item>2462(11)</item>
-        <item>2467(12)</item>
-        <item>2472(13)</item>
-        <item>5180(36)</item>
-        <item>5200(40)</item>
-        <item>5220(44)</item>
-        <item>5240(48)</item>
-        <item>5260(52)</item>
-        <item>5280(56)</item>
-        <item>5300(60)</item>
-        <item>5320(64)</item>
-        <item>5500(100)</item>
-        <item>5520(104)</item>
-        <item>5540(108)</item>
-        <item>5560(112)</item>
-        <item>5580(116)</item>
-        <item>5600(120)</item>
-        <item>5620(124)</item>
-        <item>5640(128)</item>
-        <item>5660(132)</item>
-        <item>5680(136)</item>
-        <item>5700(140)</item>
-        <item>5745(149)</item>
-        <item>5765(153)</item>
-        <item>5785(157)</item>
-        <item>5805(161)</item>
-        <item>5825(165)</item>
+        <item>2412000(1)</item>
+        <item>2417000(2)</item>
+        <item>2422000(3)</item>
+        <item>2427000(4)</item>
+        <item>2432000(5)</item>
+        <item>2437000(6)</item>
+        <item>2442000(7)</item>
+        <item>2447000(8)</item>
+        <item>2452000(9)</item>
+        <item>2457000(10)</item>
+        <item>2462000(11)</item>
+        <item>2467000(12)</item>
+        <item>2472000(13)</item>
+        <item>5180000(36)</item>
+        <item>5200000(40)</item>
+        <item>5220000(44)</item>
+        <item>5240000(48)</item>
+        <item>5260000(52)</item>
+        <item>5180000(56)</item>
+        <item>5300000(60)</item>
+        <item>5320000(64)</item>
+        <item>5500000(100)</item>
+        <item>5520000(104)</item>
+        <item>5540000(108)</item>
+        <item>5560000(112)</item>
+        <item>5580000(116)</item>
+        <item>5600000(120)</item>
+        <item>5620000(124)</item>
+        <item>5640000(128)</item>
+        <item>5660000(132)</item>
+        <item>5680000(136)</item>
+        <item>5700000(140)</item>
+        <item>5745000(149)</item>
+        <item>5765000(153)</item>
+        <item>5785000(157)</item>
+        <item>5805000(161)</item>
+        <item>5825000(165)</item>
     </string-array>
 
     <string-array name="channels_40m">
-        <item>2422(3)</item>
-        <item>2427(4)</item>
-        <item>2432(5)</item>
-        <item>2437(6)</item>
-        <item>2442(7)</item>
-        <item>2447(8)</item>
-        <item>2452(9)</item>
-        <item>2457(10)</item>
-        <item>2462(11)</item>
-        <item>5190(38)</item>
-        <item>5210(42)</item>
-        <item>5230(46)</item>
-        <item>5250(50)</item>
-        <item>5270(54)</item>
-        <item>5290(58)</item>
-        <item>5310(62)</item>
-        <item>5510(102)</item>
-        <item>5530(106)</item>
-        <item>5550(110)</item>
-        <item>5570(114)</item>
-        <item>5590(118)</item>
-        <item>5610(122)</item>
-        <item>5630(126)</item>
-        <item>5650(130)</item>
-        <item>5670(134)</item>
-        <item>5690(138)</item>
-        <item>5710(142)</item>
-        <item>5755(151)</item>
-        <item>5775(155)</item>
-        <item>5795(159)</item>
-        <item>5815(163)</item>
+        <item>2422000(3)</item>
+        <item>2427000(4)</item>
+        <item>2432000(5)</item>
+        <item>2437000(6)</item>
+        <item>2442000(7)</item>
+        <item>2447000(8)</item>
+        <item>2452000(9)</item>
+        <item>2457000(10)</item>
+        <item>2462000(11)</item>
+        <item>5190000(38)</item>
+        <item>5210000(42)</item>
+        <item>5230000(46)</item>
+        <item>5250000(50)</item>
+        <item>5270000(54)</item>
+        <item>5290000(58)</item>
+        <item>5310000(62)</item>
+        <item>5510000(102)</item>
+        <item>5530000(106)</item>
+        <item>5550000(110)</item>
+        <item>5570000(114)</item>
+        <item>5590000(118)</item>
+        <item>5610000(122)</item>
+        <item>5630000(126)</item>
+        <item>5650000(130)</item>
+        <item>5670000(134)</item>
+        <item>5690000(138)</item>
+        <item>5710000(142)</item>
+        <item>5755000(151)</item>
+        <item>5775000(155)</item>
+        <item>5795000(159)</item>
+        <item>5815000(163)</item>
     </string-array>
 
     <string-array name="channels_80m">
-        <item>5210(42)</item>
-        <item>5230(46)</item>
-        <item>5250(50)</item>
-        <item>5270(54)</item>
-        <item>5290(58)</item>
-        <item>5530(106)</item>
-        <item>5550(110)</item>
-        <item>5570(114)</item>
-        <item>5590(118)</item>
-        <item>5610(122)</item>
-        <item>5630(126)</item>
-        <item>5650(130)</item>
-        <item>5670(134)</item>
-        <item>5690(138)</item>
-        <item>5775(155)</item>
-        <item>5795(159)</item>
+        <item>5210000(42)</item>
+        <item>5230000(46)</item>
+        <item>5250000(50)</item>
+        <item>5270000(54)</item>
+        <item>5290000(58)</item>
+        <item>5530000(106)</item>
+        <item>5550000(110)</item>
+        <item>5570000(114)</item>
+        <item>5590000(118)</item>
+        <item>5610000(122)</item>
+        <item>5630000(126)</item>
+        <item>5650000(130)</item>
+        <item>5670000(134)</item>
+        <item>5690000(138)</item>
+        <item>5775000(155)</item>
+        <item>5795000(159)</item>
     </string-array>
 
     <string-array name="tx_mode">
@@ -230,13 +243,10 @@
     </string-array>
 
     <string-array name="rates_11b">
-        <item>11B LONG 1M</item>
-        <item>11B LONG 2M</item>
-        <item>11B LONG 5.5M</item>
-        <item>11B LONG 11M</item>
-        <item>11B SHORT 2M</item>
-        <item>11B SHORT 5.5M</item>
-        <item>11B SHORT 11M</item>
+        <item>11B 1M</item>
+        <item>11B 2M</item>
+        <item>11B 5.5M</item>
+        <item>11B 11M</item>
     </string-array>
 
     <string-array name="rates_11g">
@@ -262,41 +272,25 @@
     </string-array>
 
     <string-array name="rates_11n_20m">
-        <item>11n MCS0 6.5M</item>
-        <item>11n MCS1 13M</item>
-        <item>11n MCS2 19.5M</item>
-        <item>11n MCS3 26M</item>
-        <item>11n MCS4 39M</item>
-        <item>11n MCS5 52M</item>
-        <item>11n MCS6 58.5M</item>
-        <item>11n MCS7 65M</item>
-        <item>11n MCS0 MM SG 7.2M</item>
-        <item>11n MCS1 MM SG 14.4M</item>
-        <item>11n MCS2 MM SG 21.7M</item>
-        <item>11n MCS3 MM SG 28.9M</item>
-        <item>11n MCS4 MM SG 43.3M</item>
-        <item>11n MCS5 MM SG 57.8M</item>
-        <item>11n MCS6 MM SG 65M</item>
-        <item>11n MCS7 MM SG 72.2M</item>
+        <item>11n 6.5M</item>
+        <item>11n 13M</item>
+        <item>11n 19.5M</item>
+        <item>11n 26M</item>
+        <item>11n 39M</item>
+        <item>11n 52M</item>
+        <item>11n 58.5M</item>
+        <item>11n 65M</item>
     </string-array>
 
     <string-array name="rates_11n_40m">
-        <item>11n MCS0 13.5M</item>
-        <item>11n MCS1 27M</item>
-        <item>11n MCS2 40.5M</item>
-        <item>11n MCS3 54M</item>
-        <item>11n MCS4 81M</item>
-        <item>11n MCS5 108M</item>
-        <item>11n MCS6 121.5M</item>
-        <item>11n MCS7 135M</item>
-        <item>11n MCS0 MM SG 15M</item>
-        <item>11n MCS1 MM SG 30M</item>
-        <item>11n MCS2 MM SG 45M</item>
-        <item>11n MCS3 MM SG 60M</item>
-        <item>11n MCS4 MM SG 90M</item>
-        <item>11n MCS5 MM SG 120M</item>
-        <item>11n MCS6 MM SG 135M</item>
-        <item>11n MCS7 MM SG 150M</item>
+        <item>11n 13.5M</item>
+        <item>11n 27M</item>
+        <item>11n 40.5M</item>
+        <item>11n 54M</item>
+        <item>11n 81M</item>
+        <item>11n 108M</item>
+        <item>11n 121.5M</item>
+        <item>11n 135M</item>
     </string-array>
 
     <string-array name="rates_11ac_20m">
@@ -310,16 +304,6 @@
         <item>11ac MCS7 NGI 65M</item>
         <item>11ac MCS8 NGI 78M</item>
         <item>11ac MCS9 NGI 86.5M</item>
-        <item>11ac MCS0 SGI 7.2M</item>
-        <item>11ac MCS1 SGI 14.4M</item>
-        <item>11ac MCS2 SGI 21.6M</item>
-        <item>11ac MCS3 SGI 28.8M</item>
-        <item>11ac MCS4 SGI 43.3M</item>
-        <item>11ac MCS5 SGI 57.7M</item>
-        <item>11ac MCS6 SGI 65M</item>
-        <item>11ac MCS7 SGI 72.2M</item>
-        <item>11ac MCS8 SGI 86.6M</item>
-        <item>11ac MCS9 SGI 96.1M</item>
     </string-array>
 
     <string-array name="rates_11ac_40m">
@@ -333,16 +317,6 @@
         <item>11ac MCS7 NGI 135M</item>
         <item>11ac MCS8 NGI 162M</item>
         <item>11ac MCS9 NGI 180M</item>
-        <item>11ac MCS0 SGI 15M</item>
-        <item>11ac MCS1 SGI 30M</item>
-        <item>11ac MCS2 SGI 45M</item>
-        <item>11ac MCS3 SGI 60M</item>
-        <item>11ac MCS4 SGI 90M</item>
-        <item>11ac MCS5 SGI 120M</item>
-        <item>11ac MCS6 SGI 135M</item>
-        <item>11ac MCS7 SGI 150M</item>
-        <item>11ac MCS8 SGI 180M</item>
-        <item>11ac MCS9 SGI 200M</item>
     </string-array>
 
     <string-array name="rates_11ac_80m">
@@ -356,16 +330,6 @@
         <item>11ac MCS7 NGI 292.5M</item>
         <item>11ac MCS8 NGI 351M</item>
         <item>11ac MCS9 NGI 390M</item>
-        <item>11ac MCS0 SGI 32.5M</item>
-        <item>11ac MCS1 SGI 65M</item>
-        <item>11ac MCS2 SGI 97.5M</item>
-        <item>11ac MCS3 SGI 130M</item>
-        <item>11ac MCS4 SGI 195M</item>
-        <item>11ac MCS5 SGI 260M</item>
-        <item>11ac MCS6 SGI 292.5M</item>
-        <item>11ac MCS7 SGI 325M</item>
-        <item>11ac MCS8 SGI 390M</item>
-        <item>11ac MCS9 SGI 433.3M</item>
     </string-array>
 
     <string-array name="package_len">
@@ -388,34 +352,33 @@
 
     <string-array name="power">
         <item>fixed</item>
-        <item>10db</item>
-        <item>11db</item>
-        <item>12db</item>
-        <item>13db</item>
-        <item>14db</item>
-        <item>15db</item>
-        <item>16db</item>
-        <item>17db</item>
-        <item>18db</item>
-        <item>19db</item>
-        <item>20db</item>
-        <item>21db</item>
-        <item>22db</item>
+        <item>b(10db)</item>
+        <item>b(11db)</item>
+        <item>b(12db)</item>
+        <item>b(13db)</item>
+        <item>b(14db)</item>
+        <item>b(15db)</item>
+        <item>b(16db)</item>
+        <item>b(17db)</item>
+        <item>b(18db)</item>
+        <item>b(19db)</item>
+        <item>b(20db)</item>
     </string-array>
+
     <string-array name="wifi_wave_channel">
-        <item>2412(1)</item>
-        <item>2417(2)</item>
-        <item>2422(3)</item>
-        <item>2427(4)</item>
-        <item>2432(5)</item>
-        <item>2437(6)</item>
-        <item>2442(7)</item>
-        <item>2447(8)</item>
-        <item>2452(9)</item>
-        <item>2457(10)</item>
-        <item>2462(11)</item>
-        <item>2467(12)</item>
-        <item>2472(13)</item>
+        <item>2412000(1)</item>
+        <item>2417000(2)</item>
+        <item>2422000(3)</item>
+        <item>2427000(4)</item>
+        <item>2432000(5)</item>
+        <item>2437000(6)</item>
+        <item>2442000(7)</item>
+        <item>2447000(8)</item>
+        <item>2452000(9)</item>
+        <item>2457000(10)</item>
+        <item>2462000(11)</item>
+        <item>2467000(12)</item>
+        <item>2472000(13)</item>
     </string-array>
     <string-array name="wifi_wave_digital_gain">
         <item>-39</item>

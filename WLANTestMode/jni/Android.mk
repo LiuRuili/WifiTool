@@ -1,32 +1,3 @@
-################################################################################
-#                                                                  Date:10/2012
-#                                 PRESENTATION
-#
-#         Copyright 2012 TCL Communication Technology Holdings Limited.
-#
-# This material is company confidential, cannot be reproduced in any form
-# without the written permission of TCL Communication Technology Holdings
-# Limited.
-#
-# -----------------------------------------------------------------------------
-#  Author :  Chen Ji
-#  Email  :  Ji.Chen@tcl-mobile.com
-#  Role   :
-#  Reference documents : refer bugID200662/161302
-# -----------------------------------------------------------------------------
-#  Comments :
-#  File     : development/apps/WLANTestMode/jni
-#  Labels   :
-# -----------------------------------------------------------------------------
-# =============================================================================
-#      Modifications on Features list / Changes Request / Problems Report
-# -----------------------------------------------------------------------------
-#    date   |        author        |         Key          |      comment
-# ----------|----------------------|----------------------|--------------------
-# 10/22/2012|Chen Ji               |bugID321787           |makefile document to
-#           |                      |                      | control compile
-# ----------|----------------------|----------------------|--------------------
-################################################################################
 
 LOCAL_PATH:= $(call my-dir)
 include $(CLEAR_VARS)
@@ -41,9 +12,12 @@ LOCAL_SRC_FILES:= \
   wifitestmode.cpp
 
 # All of the shared libraries we link against.
+# [DEGUB] MOD-BEGIN BY TCTNB.Ruili.Liu 1885375 20160431 Add SSID and IP item to WifiTestMode
 LOCAL_SHARED_LIBRARIES := \
     libutils \
-    libcutils
+    libcutils \
+    libnativehelper
+# [DEGUB] MOD-END BY TCTNB.Ruili.Liu
 
 # No static libraries.
 LOCAL_STATIC_LIBRARIES :=

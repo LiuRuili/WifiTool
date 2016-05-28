@@ -1,35 +1,3 @@
-/******************************************************************************/
-/*                                                               Date:10/2012 */
-/*                                PRESENTATION                                */
-/*                                                                            */
-/*       Copyright 2012 TCL Communication Technology Holdings Limited.        */
-/*                                                                            */
-/* This material is company confidential, cannot be reproduced in any form    */
-/* without the written permission of TCL Communication Technology Holdings    */
-/* Limited.                                                                   */
-/*                                                                            */
-/* -------------------------------------------------------------------------- */
-/*  Author :  Chen Ji                                                         */
-/*  Email  :  Ji.Chen@tcl-mobile.com                                          */
-/*  Role   :                                                                  */
-/*  Reference documents : refer bugID200662/161302                            */
-/* -------------------------------------------------------------------------- */
-/*  Comments :                                                                */
-/*  File     : development/apps/WLANTestMode/src/com/android/WLANTestMode     */
-/*  Labels   :                                                                */
-/* -------------------------------------------------------------------------- */
-/* ========================================================================== */
-/*     Modifications on Features list / Changes Request / Problems Report     */
-/* -------------------------------------------------------------------------- */
-/*    date   |        author        |         Key          |     comment      */
-/* ----------|----------------------|----------------------|----------------- */
-/* 11/30/2012|Chen Ji               |bugID329061           |develop WLANTestM */
-/*           |                      |                      |ode app java code */
-/* ----------|----------------------|----------------------|----------------- */
-/* 23/12/2015|Liu Ruili             |bugID1209820          |Upgrade wifitestmode*/
-/*           |                      |                      |apk               */
-/* ----------|----------------------|----------------------|----------------- */
-/******************************************************************************/
 
 package com.android.WLANTestMode;
 
@@ -154,47 +122,11 @@ public class WLANTestModeBG extends Activity implements OnClickListener {
         }
 
         mTSNative.wifi_testmode_set_channel_bonding(spinner_channel_bonding_pos);
-        if (spinner_channel_bonding_pos == 0) {
-            mBandWidth = BANDWIDTH_20;
-        } else if (spinner_channel_bonding_pos > 0 && spinner_channel_bonding_pos <= 3) {
-            mBandWidth = BANDWIDTH_40;
-        } else if (spinner_channel_bonding_pos > 3){
-            mBandWidth = BANDWIDTH_80;
-        }
 
-        if (mBandWidth == BANDWIDTH_20 && spinner_channel_pos <= 12 && spinner_mode_pos == 0) {
-            // 11b
-            mTSNative.wifi_testmode_set_rate_bw(mBandWidth,0,spinner_rate_pos);
-        } else if (mBandWidth == BANDWIDTH_20 && spinner_channel_pos <= 12 && spinner_mode_pos == 1 ) {
-            // 11g
-            mTSNative.wifi_testmode_set_rate_bw(mBandWidth,1,spinner_rate_pos);
-        } else if (mBandWidth == BANDWIDTH_20 && spinner_channel_pos <= 12 && spinner_mode_pos == 2 ) {
-            // 11n
-            mTSNative.wifi_testmode_set_rate_bw(mBandWidth,2,spinner_rate_pos);
-        } else if (mBandWidth == BANDWIDTH_20 && spinner_channel_pos > 12 && spinner_mode_pos == 0) {
-            // 11n
-            mTSNative.wifi_testmode_set_rate_bw(mBandWidth,2,spinner_rate_pos);
-        } else if (mBandWidth == BANDWIDTH_20 && spinner_channel_pos > 12 && spinner_mode_pos == 1) {
-           // 11a
-            mTSNative.wifi_testmode_set_rate_bw(mBandWidth,1,spinner_rate_pos);
-        } else if (mBandWidth == BANDWIDTH_20 && spinner_channel_pos > 12 && spinner_mode_pos == 2) {
-            // 11ac
-            mTSNative.wifi_testmode_set_rate_bw(mBandWidth,3,spinner_rate_pos);
-        } else if (mBandWidth == BANDWIDTH_40 && spinner_channel_pos > 8 && spinner_mode_pos == 0) {
-           // 11n
-            mTSNative.wifi_testmode_set_rate_bw(mBandWidth,2,spinner_rate_pos);
-        } else if (mBandWidth == BANDWIDTH_40 && spinner_channel_pos > 8 && spinner_mode_pos == 1) {
-           // 11ac
-            mTSNative.wifi_testmode_set_rate_bw(mBandWidth,3,spinner_rate_pos);
-        } else if (mBandWidth == BANDWIDTH_40 && spinner_channel_pos <= 8 && spinner_mode_pos == 0) {
-           // 11n
-           mTSNative.wifi_testmode_set_rate_bw(mBandWidth,2,spinner_rate_pos);
-        } else if (mBandWidth == BANDWIDTH_80 && spinner_mode_pos == 0) {
-           // 11ac
-            mTSNative.wifi_testmode_set_rate_bw(mBandWidth,3,spinner_rate_pos);
-        }
 
-        mTSNative.wifi_testmode_set_channel_bw(mBandWidth,spinner_channel_pos);
+
+		mTSNative.wifi_testmode_set_rate_bw(spinner_channel_bonding_pos,spinner_rate_pos);
+        mTSNative.wifi_testmode_set_channel_bw(spinner_channel_bonding_pos,spinner_channel_pos);
         mTSNative.wifi_testmode_set_txpkglen(spinner_len_pos);
         mTSNative.wifi_testmode_set_power(spinner_power_pos);
         mTSNative.wifi_testmode_set_power_cntl_mode(spinner_power_cntl_mode_pos);
@@ -271,11 +203,13 @@ public class WLANTestModeBG extends Activity implements OnClickListener {
         // Channel Spinner
         spinner_c = (Spinner)findViewById(R.id.WiFi_Channel_Spinner);
         ArrayAdapter<CharSequence> adapter_channels = ArrayAdapter.createFromResource(this, R.array.channels_20m, android.R.layout.simple_spinner_item);
-        if (spinner_channel_bonding_pos == 0 ) { // 20M BW
+        if (spinner_channel_bonding_pos == 0 || spinner_channel_bonding_pos == 3) { // 20M BW
+            adapter_channels = ArrayAdapter.createFromResource(this, R.array.channels_24G, android.R.layout.simple_spinner_item);
+        } else if (spinner_channel_bonding_pos == 1 && spinner_channel_bonding_pos == 4) { // 40M BW
             adapter_channels = ArrayAdapter.createFromResource(this, R.array.channels_20m, android.R.layout.simple_spinner_item);
-        } else if (spinner_channel_bonding_pos > 0 && spinner_channel_bonding_pos <= 3) { // 40M BW
+        } else if (spinner_channel_bonding_pos == 2 && spinner_channel_bonding_pos == 5) { // 40M BW
             adapter_channels = ArrayAdapter.createFromResource(this, R.array.channels_40m, android.R.layout.simple_spinner_item);
-        } else if (spinner_channel_bonding_pos > 3){ // 80M BW
+        } else if (spinner_channel_bonding_pos == 6){ // 80M BW
             adapter_channels = ArrayAdapter.createFromResource(this, R.array.channels_80m, android.R.layout.simple_spinner_item);
         }
         adapter_channels.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
@@ -284,69 +218,24 @@ public class WLANTestModeBG extends Activity implements OnClickListener {
         spinner_c.setOnItemSelectedListener(listener);
     }
 
-    private void setModeView() {
-        // Mode Spinner
-        spinner_m = (Spinner)findViewById(R.id.WiFi_TX_mode_Spinner);
-        ArrayAdapter<CharSequence> adapter_mode = ArrayAdapter.createFromResource(this, R.array.tx_mode_24_20m, android.R.layout.simple_spinner_item);
-        if (spinner_channel_bonding_pos == 0 ) { // 20M BW
-            if (spinner_channel_pos > 12) { // Select 5G
-                adapter_mode = ArrayAdapter.createFromResource(this, R.array.tx_mode_50_20m, android.R.layout.simple_spinner_item);
-            } else {
-                adapter_mode = ArrayAdapter.createFromResource(this, R.array.tx_mode_24_20m, android.R.layout.simple_spinner_item);
-            }
-        } else if (spinner_channel_bonding_pos > 0 && spinner_channel_bonding_pos <= 3) { // 40M BW
-            if (spinner_channel_pos > 8) { // Select 5G
-                adapter_mode = ArrayAdapter.createFromResource(this, R.array.tx_mode_50_40m, android.R.layout.simple_spinner_item);
-            } else {
-                adapter_mode = ArrayAdapter.createFromResource(this, R.array.tx_mode_24_40m, android.R.layout.simple_spinner_item);
-            }
-        } else if (spinner_channel_bonding_pos > 3) { // 80M BW
-            adapter_mode = ArrayAdapter.createFromResource(this, R.array.tx_mode_50_80m, android.R.layout.simple_spinner_item);
-        }
-        adapter_mode.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
-        spinner_m.setAdapter(adapter_mode);
-        spinner_m.setSelection(spinner_mode_pos);
-        spinner_m.setOnItemSelectedListener(listener);
-    }
-
     private void setRateView() {
         // Rate Spinner
         spinner_r = (Spinner)findViewById(R.id.WiFi_Rate_Spinner);
         ArrayAdapter<CharSequence> adapter_rate = ArrayAdapter.createFromResource(this, R.array.rates_11b, android.R.layout.simple_spinner_item);
         if (spinner_channel_bonding_pos == 0 ) { // 20M BW
-            if (spinner_channel_pos > 12) { // 5G
-                if (spinner_mode_pos == 0 ) { // 11n
-                    adapter_rate = ArrayAdapter.createFromResource(this, R.array.rates_11n_20m, android.R.layout.simple_spinner_item);
-                } else if (spinner_mode_pos == 1 ) { // 11a
-                    adapter_rate = ArrayAdapter.createFromResource(this, R.array.rates_11a, android.R.layout.simple_spinner_item);
-                } else if (spinner_mode_pos == 2 ) { // 11ac
-                    adapter_rate = ArrayAdapter.createFromResource(this, R.array.rates_11ac_20m, android.R.layout.simple_spinner_item);
-                }
-            } else { // 2.4G 20M
-                if (spinner_mode_pos == 0 ) { // 11b
-                    adapter_rate = ArrayAdapter.createFromResource(this, R.array.rates_11b, android.R.layout.simple_spinner_item);
-                } else if (spinner_mode_pos == 1 ) { // 11g
-                    adapter_rate = ArrayAdapter.createFromResource(this, R.array.rates_11g, android.R.layout.simple_spinner_item);
-                } else if (spinner_mode_pos == 2 ) { // 11n
-                    adapter_rate = ArrayAdapter.createFromResource(this, R.array.rates_11n_20m, android.R.layout.simple_spinner_item);
-                }
-            }
-        } else if (spinner_channel_bonding_pos > 0 && spinner_channel_bonding_pos <= 3) { // 40M BW
-            if (spinner_channel_pos > 8) { // Select 5G
-                if (spinner_mode_pos == 0 ) { // 11n
-                    adapter_rate = ArrayAdapter.createFromResource(this, R.array.rates_11n_40m, android.R.layout.simple_spinner_item);
-                } else if (spinner_mode_pos == 1 ) { // 11ac
-                    adapter_rate = ArrayAdapter.createFromResource(this, R.array.rates_11ac_40m, android.R.layout.simple_spinner_item);
-                }
-            } else { // 2.4G 40M
-                if (spinner_mode_pos == 0 ) { // 11n
-                    adapter_rate = ArrayAdapter.createFromResource(this, R.array.rates_11n_40m, android.R.layout.simple_spinner_item);
-                }
-            }
-        } else if (spinner_channel_bonding_pos > 3){ // 80M BW
-            if (spinner_mode_pos == 0 ) { // 11ac 80M
-                adapter_rate = ArrayAdapter.createFromResource(this, R.array.rates_11ac_80m, android.R.layout.simple_spinner_item);
-            }
+            adapter_rate = ArrayAdapter.createFromResource(this, R.array.rates_11g, android.R.layout.simple_spinner_item);
+        } else if (spinner_channel_bonding_pos == 1 ) { // 20M BW
+            adapter_rate = ArrayAdapter.createFromResource(this, R.array.rates_11n_20m,android.R.layout.simple_spinner_item);
+        } else if (spinner_channel_bonding_pos == 2 ) { // 20M BW
+            adapter_rate = ArrayAdapter.createFromResource(this, R.array.rates_11n_40m,android.R.layout.simple_spinner_item);
+        } else if (spinner_channel_bonding_pos == 3 ) { // 20M BW
+            adapter_rate = ArrayAdapter.createFromResource(this, R.array.rates_11b,android.R.layout.simple_spinner_item);
+        } else if (spinner_channel_bonding_pos == 4 ) { // 20M BW
+            adapter_rate = ArrayAdapter.createFromResource(this,R.array.rates_11ac_20m,android.R.layout.simple_spinner_item);
+        } else if (spinner_channel_bonding_pos == 5 ) { // 20M BW
+            adapter_rate = ArrayAdapter.createFromResource(this,R.array.rates_11ac_40m,android.R.layout.simple_spinner_item);
+        } else if (spinner_channel_bonding_pos == 6 ) { // 20M BW
+            adapter_rate = ArrayAdapter.createFromResource(this,R.array.rates_11ac_80m,android.R.layout.simple_spinner_item);
         }
         adapter_rate.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         spinner_r.setAdapter(adapter_rate);
@@ -361,20 +250,14 @@ public class WLANTestModeBG extends Activity implements OnClickListener {
                 setPowerView();
                 setChannelBondingView();
                 setChannelView();
-                setModeView();
                 setRateView();
                 setPackageLenView();
                 break;
             case CHANGE_FLAG_CHANNEL_BONDING:
                 setChannelView();
-                setModeView();
                 setRateView();
                 break;
             case CHANGE_FLAG_CHANNEL:
-                setModeView();
-                setRateView();
-                break;
-            case CHANGE_FLAG_MODE:
                 setRateView();
                 break;
             default:
@@ -395,21 +278,14 @@ public class WLANTestModeBG extends Activity implements OnClickListener {
                 mChangeFlag = CHANGE_FLAG_CHANNEL_BONDING;
                 spinner_channel_bonding_pos = position;
                 spinner_channel_pos = 0;
-                spinner_mode_pos = 0;
                 spinner_rate_pos = 0;
                 find_and_update_view();
             } else if (parent == spinner_c) {
                 mChangeFlag = CHANGE_FLAG_CHANNEL;
                 spinner_channel_pos = position;
-                spinner_mode_pos = 0;
                 spinner_rate_pos = 0;
                 find_and_update_view();
-            } else if (parent == spinner_m) {
-                mChangeFlag = CHANGE_FLAG_MODE;
-                spinner_mode_pos = position;
-                spinner_rate_pos = 0;
-                find_and_update_view();
-            } else if (parent == spinner_r) {
+			} else if (parent == spinner_r) {
                 spinner_rate_pos = position;
             } else if (parent == spinner_len) {
                 spinner_len_pos = position;

@@ -32,7 +32,7 @@
 -->
 <resources>
 
-    <string name="app_name">WCN WLANTestMode</string>
+    <string name="app_name">WLANTestMode</string>
     <string name="WiFi_Channel_Text">Channel</string>
     <string name="WiFi_MCS_Text">MCS</string>
     <string name="WiFi_Rate_Text">Rate</string>
@@ -56,4 +56,6 @@
     <string name="WiFi_pkglen">Packge Length</string>
     <string name="WiFi_Power_cntl_mode">Power Cntl Mode</string>
     <string name="WiFi_TX_mode">Mode</string>
+    <string name="WiFi_N_SSID">SSID</string>
+    <string name="WiFi_N_IP">IP</string>
 </resources>

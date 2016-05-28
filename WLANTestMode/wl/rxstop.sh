@@ -1,33 +1,4 @@
 #!/system/bin/sh
-################################################################################
-#                                                                  Date:10/2012
-#                                 PRESENTATION
-#
-#         Copyright 2012 TCL Communication Technology Holdings Limited.
-#
-# This material is company confidential, cannot be reproduced in any form
-# without the written permission of TCL Communication Technology Holdings
-# Limited.
-#
-# -----------------------------------------------------------------------------
-#  Author :  Chen Ji
-#  Email  :  Ji.Chen@tcl-mobile.com
-#  Role   :
-#  Reference documents : refer bugID200662/161302
-# -----------------------------------------------------------------------------
-#  Comments :
-#  File     : development/apps/WLANTestMode/wl
-#  Labels   :
-# -----------------------------------------------------------------------------
-# =============================================================================
-#      Modifications on Features list / Changes Request / Problems Report
-# -----------------------------------------------------------------------------
-#    date   |        author        |         Key          |      comment
-# ----------|----------------------|----------------------|--------------------
-# 11/30/2012|Chen Ji               |bugID329061           |scripts are excuted
-#           |                      |                      |for WLANTest
-# ----------|----------------------|----------------------|--------------------
-################################################################################
 
 echo "#*************************************************"
 echo "# Script usage:"
@@ -46,8 +17,5 @@ logi ()
 logi "./athtestcmd -i wlan0 --rx report "
 echo "./athtestcmd -i wlan0 --rx report  "
 cd /data/wl
-iwpriv wlan0 get_rxpktcnt>rxreport
-
-sleep 1
-iwpriv wlan0 ftm 0
+myftm -x 0>rxreport
 echo "Script end."

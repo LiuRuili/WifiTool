@@ -1,35 +1,3 @@
-################################################################################
-#                                                                  Date:10/2012
-#                                 PRESENTATION
-#
-#         Copyright 2012 TCL Communication Technology Holdings Limited.
-#
-# This material is company confidential, cannot be reproduced in any form
-# without the written permission of TCL Communication Technology Holdings
-# Limited.
-#
-# -----------------------------------------------------------------------------
-#  Author :  Chen Ji
-#  Email  :  Ji.Chen@tcl-mobile.com
-#  Role   :
-#  Reference documents : refer bugID200662/161302
-# -----------------------------------------------------------------------------
-#  Comments :
-#  File     : development/apps/WLANTestMode/wl
-#  Labels   :
-# -----------------------------------------------------------------------------
-# =============================================================================
-#      Modifications on Features list / Changes Request / Problems Report
-# -----------------------------------------------------------------------------
-#    date   |        author        |         Key          |      comment
-# ----------|----------------------|----------------------|--------------------
-# 10/22/2012|Chen Ji               |bugID321787           |scripts are excuted
-#           |                      |                      |for WLANTest
-# ----------|----------------------|----------------------|--------------------
-# 12/19/2012|Chen Ji               |bugID346399           |scripts are excuted
-#           |                      |                      |for WLANTest
-# ----------|----------------------|----------------------|--------------------
-################################################################################
 
 echo "#*************************************************"
 echo "# Script usage:"
@@ -70,11 +38,15 @@ iwlist wlan0 scan
 
 sleep 2
 
-iwconfig wlan0 essid MT8860C
+iwconfig wlan0 essid $1
+
+logi "iwconfig wlan0 essid $1"
 
 sleep 1
 
-ifconfig wlan0 192.168.1.189 up
+ifconfig wlan0 $2 up
+
+logi "ifconfig wlan0 $2 up"
 
 #logi "echo 0 >/mnt/debugfs/ieee80211/phy0/ath6kl/bgscan_interval"
 

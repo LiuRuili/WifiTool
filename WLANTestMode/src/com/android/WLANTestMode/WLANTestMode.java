@@ -1,32 +1,3 @@
-/******************************************************************************/
-/*                                                               Date:10/2012 */
-/*                                PRESENTATION                                */
-/*                                                                            */
-/*       Copyright 2012 TCL Communication Technology Holdings Limited.        */
-/*                                                                            */
-/* This material is company confidential, cannot be reproduced in any form    */
-/* without the written permission of TCL Communication Technology Holdings    */
-/* Limited.                                                                   */
-/*                                                                            */
-/* -------------------------------------------------------------------------- */
-/*  Author :  Chen Ji                                                         */
-/*  Email  :  Ji.Chen@tcl-mobile.com                                          */
-/*  Role   :                                                                  */
-/*  Reference documents : refer bugID200662/161302                            */
-/* -------------------------------------------------------------------------- */
-/*  Comments :                                                                */
-/*  File     : development/apps/WLANTestMode/src/com/android/WLANTestMode     */
-/*  Labels   :                                                                */
-/* -------------------------------------------------------------------------- */
-/* ========================================================================== */
-/*     Modifications on Features list / Changes Request / Problems Report     */
-/* -------------------------------------------------------------------------- */
-/*    date   |        author        |         Key          |     comment      */
-/* ----------|----------------------|----------------------|----------------- */
-/* 10/22/2012|Chen Ji               |bugID321787           |develop WLANTestM */
-/*           |                      |                      |ode app java code */
-/* ----------|----------------------|----------------------|----------------- */
-/******************************************************************************/
 
 package com.android.WLANTestMode;
 
@@ -66,8 +37,8 @@ public class WLANTestMode extends Activity {
     private ListView listView = null;
     private int FUNCTION_BG_TEST_ID = 0;
     private int FUNCTION_N_TEST_ID = 1;
-    private int FUNCTION_RX_TEST_ID=3;
-    private int FUNCTION_WAVE_GENERATOR = 2;
+    private int FUNCTION_RX_TEST_ID=2;
+    private int FUNCTION_WAVE_GENERATOR = 3;
     private int FUNCTION_TX_UNMOD_TEST=4;
 
 
@@ -118,16 +89,16 @@ public class WLANTestMode extends Activity {
         data.add(item);
 
         item = new HashMap<String,Object>();
+        item.put("function", getResources().getString(R.string.wifi_rx_mode));
+        data.add(item);
+
+        item = new HashMap<String,Object>();
         item.put("function", getResources().getString(R.string.wifi_wave_generator));
         data.add(item);
 
-        /*item = new HashMap<String,Object>();
-        item.put("function", getResources().getString(R.string.wifi_rx_mode));
-        data.add(item);
-        
         item = new HashMap<String,Object>();
         item.put("function", getResources().getString(R.string.wifi_unmodem_mode));
-        data.add(item); */
+        //data.add(item);
 
     }
 

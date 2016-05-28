@@ -25,7 +25,7 @@
             android:layout_width="240dip"
             android:layout_height="wrap_content"
             android:prompt="@string/WiFi_Channel_Text"
-            android:entries="@array/channels_20m"/>
+            android:entries="@array/wifi_wave_channel"/>
     </LinearLayout>
 
     <LinearLayout

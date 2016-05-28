@@ -39,15 +39,48 @@
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
         android:orientation="horizontal">
+        <TextView android:text="@string/WiFi_Channel_Bonding_Text"
+                android:layout_width="80dip"
+                android:layout_height="wrap_content"
+                android:textStyle="bold"
+                android:paddingTop="10dip"></TextView>
+        <Spinner android:id="@+id/WiFi_Channel_Bonding_Spinner"
+                android:layout_height="wrap_content"
+                android:layout_width="240dip"></Spinner>
+
+    </LinearLayout>
+
+    <LinearLayout android:id="@+id/LinearLayout"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
 
         <TextView android:text="@string/WiFi_Channel_Text"
                 android:id="@+id/WiFi_Channel_Text"
                 android:layout_width="80dip"
                 android:layout_height="wrap_content"
+                android:textStyle="bold"
                 android:paddingTop="10dip"></TextView>
         <Spinner android:id="@+id/WiFi_Channel_Spinner"
                 android:layout_height="wrap_content"
                 android:layout_width="240dip"></Spinner>
+    </LinearLayout>
+
+    <LinearLayout android:id="@+id/LinearLayout"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <TextView android:text="@string/WiFi_Rate_Text"
+            android:id="@+id/WiFi_Rate_Text"
+            android:layout_width="80dip"
+            android:layout_height="wrap_content"
+            android:textStyle="bold"
+            android:paddingTop="10dip"></TextView>
+        <Spinner android:id="@+id/WiFi_Rate_Spinner"
+            android:layout_height="wrap_content"
+            android:layout_width="240dip"></Spinner>
+
     </LinearLayout>
 
     <LinearLayout android:id="@+id/LinearLayout3"

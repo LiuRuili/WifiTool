@@ -1,35 +1,3 @@
-/******************************************************************************/
-/*                                                               Date:10/2012 */
-/*                                PRESENTATION                                */
-/*                                                                            */
-/*       Copyright 2012 TCL Communication Technology Holdings Limited.        */
-/*                                                                            */
-/* This material is company confidential, cannot be reproduced in any form    */
-/* without the written permission of TCL Communication Technology Holdings    */
-/* Limited.                                                                   */
-/*                                                                            */
-/* -------------------------------------------------------------------------- */
-/*  Author :  Chen Ji                                                         */
-/*  Email  :  Ji.Chen@tcl-mobile.com                                          */
-/*  Role   :                                                                  */
-/*  Reference documents : refer bugID200662/161302                            */
-/* -------------------------------------------------------------------------- */
-/*  Comments :                                                                */
-/*  File     : development/apps/WLANTestMode/src/com/android/WLANTestMode     */
-/*  Labels   :                                                                */
-/* -------------------------------------------------------------------------- */
-/* ========================================================================== */
-/*     Modifications on Features list / Changes Request / Problems Report     */
-/* -------------------------------------------------------------------------- */
-/*    date   |        author        |         Key          |     comment      */
-/* ----------|----------------------|----------------------|----------------- */
-/* 10/22/2012|Chen Ji               |bugID321787           |develop WLANTestM */
-/*           |                      |                      |ode app java code */
-/* ----------|----------------------|----------------------|----------------- */
-/* 12/19/2012|Chen Ji               |bugID346399           |develop WLANTestM */
-/*           |                      |                      |ode app java code */
-/* ----------|----------------------|----------------------|----------------- */
-/******************************************************************************/
 
 package com.android.WLANTestMode;
 
@@ -52,6 +20,7 @@ import android.widget.AdapterView.OnItemSelectedListener;
 import android.net.wifi.WifiInfo;
 import android.net.wifi.WifiManager;
 import com.android.WLANTestMode.WLANTestModeNative;
+import android.widget.EditText; //[DEGUB] MOD BY TCTNB.Ruili.Liu 1885375 20160431 Add SSID and IP item to WifiTestMode
 
 public class WLANTestModeN extends Activity implements OnClickListener {
     private Spinner spinner_c;
@@ -59,6 +28,8 @@ public class WLANTestModeN extends Activity implements OnClickListener {
     private int spinner_channel_pos = 0;
     private int spinner_mcs_pos = 0;
     private WifiManager mWifiManager;
+    private EditText mSSID;
+    private EditText mIP;
     private Button mStartBtn;
     private Button mStopBtn;
     private WLANTestModeNative mTSNative = null;
@@ -71,6 +42,8 @@ public class WLANTestModeN extends Activity implements OnClickListener {
         setContentView(R.layout.n_test);
 
         find_and_modify_view();
+        mSSID = (EditText) findViewById(R.id.WiFi_N_SSID_edittext);
+        mIP = (EditText) findViewById(R.id.EditText_IP_edittext);
         mStartBtn = (Button) findViewById(R.id.WiFi_Start);
         mStopBtn = (Button) findViewById(R.id.WiFi_Stop);
         mStartBtn.setOnClickListener(this);
@@ -106,8 +79,21 @@ public class WLANTestModeN extends Activity implements OnClickListener {
     }
 
     private void onClickBtnTxStart() {
+        //[DEGUB] ADD-BEGIN BY TCTNB.Ruili.Liu 1885375 20160431 Add SSID and IP item to WifiTestMode
+        String ssid = mSSID.getText().toString();
+        String ip = mIP.getText().toString();
+
+        if (ssid.length() == 0 || ip.length() == 0 ) {
+            showToast("Please enter correct ssid and ip",Toast.LENGTH_SHORT);
+            return;
+        }
+
         mStartBtn.setEnabled(false);
         mTSNative.wifi_testmode_set_type(1);
+        mTSNative.wifi_testmode_set_ssid(ssid);
+        mTSNative.wifi_testmode_set_ip(ip);
+        //[DEGUB] ADD-END BY TCTNB.Ruili.Liu
+
         try {
             Process p = Runtime.getRuntime().exec("chmod 777 /data/wl/type");
             p.waitFor();
