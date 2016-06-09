@@ -967,7 +967,7 @@ struct	iw_range
 	__u32		throughput;	/* To give an idea... */
 	/* In theory this value should be the maximum benchmarked
 	 * TCP/IP throughput, because with most of these devices the
-	 * bit rate is meaningless (overhead an co) to estimate how
+	 * bit rate is meaningless (overhead a co) to estimate how
 	 * fast the connection will go and pick the fastest one.
 	 * I suggest people to play with Netperf or any benchmark...
 	 */
@@ -1094,7 +1094,7 @@ struct	iw_priv_args
  */
 struct iw_event
 {
-	__u16		len;			/* Real lenght of this stuff */
+	__u16		len;			/* Real length of this stuff */
 	__u16		cmd;			/* Wireless IOCTL */
 	union iwreq_data	u;		/* IOCTL fixed payload */
 };

@@ -943,7 +943,7 @@ rwl_var_getbuf(void *wl, const char *iovar, void *param, int param_len, void **b
 
 	*bufptr = g_rwl_aligned_buf;
 	/*   When user wants to execute local CMD being in remote wifi mode,
-	*	rwl_wifi_swap_remote_type fucntion is used to change the remote types.
+	*	rwl_wifi_swap_remote_type function is used to change the remote types.
 	*/
 	rwl_wifi_swap_remote_type(remote_type);
 
@@ -969,7 +969,7 @@ rwl_var_setbuf(void *wl, const char *iovar, void *param, int param_len)
 
 	len += param_len;
 	/*   When user wants to execute local CMD being in remote wifi mode,
-	*	rwl_wifi_swap_remote_type fucntion is used to change the remote types.
+	*	rwl_wifi_swap_remote_type function is used to change the remote types.
 	*/
 	rwl_wifi_swap_remote_type(remote_type);
 	error = wl_set(wl, WLC_SET_VAR, &g_rwl_aligned_buf[0], len);
@@ -1011,7 +1011,7 @@ rwl_var_send_vs_actionframe(void* wl, const char* iovar, void* param, int param_
 	len  += param_len + ETHER_ADDR_LEN + 2 + 4;
 
 	/*   When user wants to execute local CMD being in remote wifi mode,
-	*	rwl_wifi_swap_remote_type fucntion is used to change the remote types.
+	*	rwl_wifi_swap_remote_type function is used to change the remote types.
 	*/
 	rwl_wifi_swap_remote_type(remote_type);
 

@@ -129,7 +129,7 @@ int bcm_mpm_init(struct osl_info *osh, int max_pools, bcm_mpm_mgr_h *mgrp);
  *
  * Returns:
  *    BCME_OK  Memory pool manager successfully de-initialized.
- *    other    Indicated error occured during de-initialization.
+ *    other    Indicated error occurred during de-initialization.
  */
 int bcm_mpm_deinit(bcm_mpm_mgr_h *mgrp);
 
@@ -259,7 +259,7 @@ int bcm_mpm_dump(bcm_mpm_mgr_h mgr, struct bcmstrbuf *b);
  *                          This function provides the padded object size. If clients
  *                          pre-allocate a memory slab for a memory pool, the
  *                          padded object size should be used by the client to allocate
- *                          the memory slab (in order to provide sufficent space for
+ *                          the memory slab (in order to provide sufficient space for
  *                          the maximum number of objects).
  *
  * Parameters:

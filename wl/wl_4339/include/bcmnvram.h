@@ -194,7 +194,7 @@ extern int nvram_space;
 #define NVRAM_HEADER_SIZE	20
 /* This definition is for precommit staging, and will be removed */
 #define NVRAM_SPACE		0x8000
-/* For CFE builds this gets passed in thru the makefile */
+/* For CFE builds this gets passed in through the makefile */
 #ifndef MAX_NVRAM_SPACE
 #define MAX_NVRAM_SPACE		0x10000
 #endif

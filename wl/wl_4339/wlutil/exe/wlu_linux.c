@@ -386,7 +386,7 @@ main(int argc, char **argv)
 			(void)*argv--;
 	}
 
-	/* Linux client looking for a indongle reflector */
+	/* Linux client looking for an indongle reflector */
 	if (*argv && strncmp (*argv, "--indongle", strlen(*argv)) == 0) {
 		rwl_dut_autodetect = FALSE;
 		(void)*argv++;
@@ -662,8 +662,8 @@ process_args(struct ifreq* ifr, char **argv)
 			}
 			/* After join cmd's gets exeuted on the server side , client needs to know
 			* the channel on which the server is associated with AP , after delay of
-			* few seconds client will intiate the scan on diffrent channels by calling
-			* rwl_find_remote_wifi_server fucntion
+			* few seconds client will intiate the scan on different channels by calling
+			* rwl_find_remote_wifi_server function
 			*/
 			if ((!strcmp(cmd->name, "join") || ((!strcmp(cmd->name, "ssid") &&
 				(*(++argv) != NULL))))) {
@@ -790,7 +790,7 @@ do_interactive(struct ifreq *ifr)
 				/* After join cmd's gets exeuted on the server side, client
 				 * needs to know the channel on which the server is associated
 				 * with AP , after delay of few seconds client will intiate the
-				 * scan on diffrent channels by calling
+				 * scan on different channels by calling
 				 * rwl_find_remote_wifi_server function
 				 */
 					if ((!strcmp(argv[0], "join")) ||

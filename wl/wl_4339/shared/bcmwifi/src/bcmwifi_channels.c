@@ -417,7 +417,7 @@ channel_to_sb(uint center_ch, uint ctl_ch, uint bw)
 
 	sb = ((ctl_ch - lowest) / 4);
 
-	/* sb must be a index to a 20MHz channel in range */
+	/* sb must be an index to a 20MHz channel in range */
 	if (sb >= (bw / 20)) {
 		/* ctl_ch must have been too high for the center_ch */
 		return -1;

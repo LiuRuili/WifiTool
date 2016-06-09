@@ -31,7 +31,7 @@ typedef struct miniopt {
 				 * the most recent call to miniopt()
 				 */
 	bool positional;
-	bool good_int;		/* 'val' member is the result of a sucessful
+	bool good_int;		/* 'val' member is the result of a successful
 				 * strtol conversion of the option value
 				 */
 	char opt;

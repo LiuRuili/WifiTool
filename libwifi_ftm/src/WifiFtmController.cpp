@@ -71,7 +71,7 @@ int WifiFtmController::processMessage(const char* msg) {
     if (strncmp("REPORT ", msg, 7) == 0)
         return processReportCmd(msg + 7);
 
-    ALOGE("Ignore unkown command: %s", msg);
+    ALOGE("Ignore unknown command: %s", msg);
 
     return 1;
 

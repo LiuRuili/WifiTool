@@ -762,7 +762,7 @@ pktdataoffset(osl_t *osh, void *p,  uint offset)
 }
 
 
-/* given a offset in pdata, find the pkt seg hdr */
+/* given an offset in pdata, find the pkt seg hdr */
 void *
 pktoffset(osl_t *osh, void *p,  uint offset)
 {
@@ -1380,7 +1380,7 @@ BCMROMFN(bcmstrncat)(char *dest, const char *src, uint size)
 * Function:   bcmstrtok
 *
 * Purpose:
-*  Tokenizes a string. This function is conceptually similiar to ANSI C strtok(),
+*  Tokenizes a string. This function is conceptually similar to ANSI C strtok(),
 *  but allows strToken() to be used by different strings or callers at the same
 *  time. Each call modifies '*string' by substituting a NULL character for the
 *  first delimiter that is encountered, and updates 'string' to point to the char
@@ -1496,7 +1496,7 @@ bcmstricmp(const char *s1, const char *s2)
 /****************************************************************************
 * Function:   bcmstrnicmp
 *
-* Purpose:    Compare to strings case insensitively, upto a max of 'cnt'
+* Purpose:    Compare to strings case insensitively, up to a max of 'cnt'
 *             characters.
 *
 * Parameters: s1  (in) First string to compare.
@@ -1835,7 +1835,7 @@ getgpiopin(char *vars, char *pin_name, uint def_pin)
 	char *val;
 	uint pin;
 
-	/* Go thru all possibilities till a match in pin name */
+	/* Go through all possibilities till a match in pin name */
 	for (pin = 0; pin < GPIO_NUMPINS; pin ++) {
 		snprintf(name, sizeof(name), "gpio%d", pin);
 		val = getvar(vars, name);
@@ -3230,7 +3230,7 @@ bcm_mkiovar(char *name, char *data, uint datalen, char *buf, uint buflen)
 /* Quarter dBm units to mW
  * Table starts at QDBM_OFFSET, so the first entry is mW for qdBm=153
  * Table is offset so the last entry is largest mW value that fits in
- * a uint16.
+ * an uint16.
  */
 
 #define QDBM_OFFSET 153		/* Offset for first entry */

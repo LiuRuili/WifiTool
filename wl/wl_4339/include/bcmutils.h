@@ -64,8 +64,8 @@ extern const unsigned char bcm_ctype[];
 struct bcmstrbuf {
 	char *buf;	/* pointer to current position in origbuf */
 	unsigned int size;	/* current (residual) size in bytes */
-	char *origbuf;	/* unmodified pointer to orignal buffer */
-	unsigned int origsize;	/* unmodified orignal buffer size in bytes */
+	char *origbuf;	/* unmodified pointer to original buffer */
+	unsigned int origsize;	/* unmodified original buffer size in bytes */
 };
 
 /* ** driver-only section ** */
@@ -717,7 +717,7 @@ extern void *_bcmutils_dummy_fn;
 #if defined(__NetBSD__)
 /* use internal
  * setbit/clrbit since it has a cast and netbsd Xbit funcs dont
- * and the wl driver doesnt cast.  this results in us offsetting
+ * and the wl driver doesn't cast.  this results in us offsetting
  * incorrectly and corrupting memory.
  */
 #ifdef setbit

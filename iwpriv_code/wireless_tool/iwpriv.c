@@ -58,7 +58,7 @@
  * NEW DRIVER API :
  * --------------
  *	Wireless Extension 13 introduces a new driver API. Wireless
- * Extensions requests can be handled via a iw_handler table instead
+ * Extensions requests can be handled via an iw_handler table instead
  * of through the regular ioctl handler.
  *	The new driver API can be handled only with the new ioctl range
  * and enforces the GET convention (see below).

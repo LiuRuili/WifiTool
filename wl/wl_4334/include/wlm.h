@@ -363,7 +363,7 @@ int wlmLegacyRateSet(WLM_RATE rate);
 /* Sets the operating mcs rate and STF of the DUT
  * param[in] Desired mcs rate [0, 7] for SISO (single-in-single-out) device.
  * param[in] Stf mode, 0=SISO, 1= CDD, 2=STBC, 3=SDM
- * return - True for sucess, false for failure.
+ * return - True for success, false for failure.
 */
 WLM_FUNCTION
 int wlmMcsRateSet(WLM_MCS_RATE mcs_rate, WLM_STF_MODE stf_mode);
