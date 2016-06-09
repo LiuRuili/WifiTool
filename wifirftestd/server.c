@@ -16,7 +16,7 @@
 
 #include "cutils/log.h"
 
-int writen(int fd, char *ptr, int nbytes)
+int written(int fd, char *ptr, int nbytes)
 {
     int nleft, nwriten;
 
@@ -83,7 +83,7 @@ void exec_cmd(int sockfd, char *tmp_command)
     }
 
     ALOGE("exec_cmd: return %s", run_status);
-    if (writen(sockfd, run_status, strlen(run_status) + 1) != (strlen(run_status) + 1))
+    if (written(sockfd, run_status, strlen(run_status) + 1) != (strlen(run_status) + 1))
         ALOGE("exec_cmd: write error");
 
     status = pclose(fp);

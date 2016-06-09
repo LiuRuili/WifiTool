@@ -139,7 +139,7 @@ spec_to_chan(chanspec_t chspec)
 
 /*
 	Take an array of measumrements representing summaries of different channels.
-	Return a recomended channel.
+	Return a recommended channel.
 	Interference is evil, get rid of that first.
 	Then hunt for lowest Other bss traffic.
 	Don't forget that channels with low duration times may not have accurate readings.

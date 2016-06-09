@@ -285,7 +285,7 @@
 #define BCM4314PCIE_PKG_ID		(8 | 2)	/* 4314 QFN PCI (ARM-less) package id */
 #define BCM4314SDIO_ARM_PKG_ID		(8 | 3)	/* 4314 QFN SDIO (ARM-less) package id */
 #define BCM4314SDIO_FPBGA_PKG_ID	(8 | 4)	/* 4314 FpBGA SDIO package id */
-#define BCM4314DEV_PKG_ID		(8 | 6)	/* 4314 Developement package id */
+#define BCM4314DEV_PKG_ID		(8 | 6)	/* 4314 Development package id */
 
 #define PCIXX21_FLASHMEDIA0_ID	0x8033		/* TI PCI xx21 Standard Host Controller */
 #define PCIXX21_SDIOH0_ID	0x8034		/* TI PCI xx21 Standard Host Controller */

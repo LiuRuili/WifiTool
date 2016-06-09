@@ -57,7 +57,7 @@
 #include <sys/socket.h>			/* for "struct sockaddr" et al	*/
 #include <net/if.h>			/* for IFNAMSIZ and co... */
 
-/* Private copy of Wireless extensions (in this directoty) */
+/* Private copy of Wireless extensions (in this directory) */
 #include "wireless.h"
 
 /* Make gcc understant that when we say inline, we mean it.
@@ -112,7 +112,7 @@ extern "C" {
 #define PROC_NET_WIRELESS	"/proc/net/wireless"
 #define PROC_NET_DEV		"/proc/net/dev"
 
-/* Some usefull constants */
+/* Some useful constants */
 #define KILO	1e3
 #define MEGA	1e6
 #define GIGA	1e9
@@ -138,7 +138,7 @@ extern "C" {
 
 struct iw_pk_event
 {
-	__u16		len;			/* Real lenght of this stuff */
+	__u16		len;			/* Real length of this stuff */
 	__u16		cmd;			/* Wireless IOCTL */
 	union iwreq_data	u;		/* IOCTL fixed payload */
 } __attribute__ ((packed));

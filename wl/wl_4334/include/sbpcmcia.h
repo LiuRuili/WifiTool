@@ -103,7 +103,7 @@
 #define	CISTPL_CFTABLE		0x1b		/* Config table entry */
 #define	CISTPL_END		0xff		/* End of the CIS tuple chain */
 
-/* Function identifier provides context for the function extentions tuple */
+/* Function identifier provides context for the function extensions tuple */
 #define CISTPL_FID_SDIO		0x0c		/* Extensions defined by SDIO spec */
 
 /* Function extensions for LANs (assumed for extensions other than SDIO) */
@@ -262,7 +262,7 @@
 				* This is required for socram rev 15 onwards.
 				*/
 
-#define HNBU_USBRDY		0x4c	/* Variable length (upto 5 bytes)
+#define HNBU_USBRDY		0x4c	/* Variable length (up to 5 bytes)
 				* This is to indicate the USB/HSIC host controller
 				* that the device is ready for enumeration.
 				*/

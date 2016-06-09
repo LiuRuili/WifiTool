@@ -1152,7 +1152,7 @@ typedef struct ti_ie ti_ie_t;
 #define DOT11_MNG_PU_BUFFER_STATUS_ID	106	/* 11z TDLS PU Buffer Status IE */
 #define DOT11_MNG_INTERWORKING_ID		107	/* 11u interworking */
 #define DOT11_MNG_ADVERTISEMENT_ID		108	/* 11u advertisement protocol */
-#define DOT11_MNG_EXP_BW_REQ_ID			109	/* 11u expedited bandwith request */
+#define DOT11_MNG_EXP_BW_REQ_ID			109	/* 11u expedited bandwidth request */
 #define DOT11_MNG_QOS_MAP_ID			110	/* 11u QoS map set */
 #define DOT11_MNG_ROAM_CONSORT_ID		111	/* 11u roaming consortium */
 #define DOT11_MNG_EMERGCY_ALERT_ID		112	/* 11u emergency alert identifier */
@@ -2026,7 +2026,7 @@ typedef struct dot11_obss_ie dot11_obss_ie_t;
 #define WFA_OUI_TYPE_TPC	8
 #define WFA_OUI_TYPE_P2P	9
 
-/* RSN authenticated key managment suite */
+/* RSN authenticated key management suite */
 #define RSN_AKM_NONE		0	/* None (IBSS) */
 #define RSN_AKM_UNSPECIFIED	1	/* Over 802.1x */
 #define RSN_AKM_PSK		2	/* Pre-shared Key */

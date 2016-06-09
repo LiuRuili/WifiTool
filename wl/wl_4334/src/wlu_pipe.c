@@ -154,11 +154,11 @@ void remote_wifi_ser_init_cmds(void *wl)
 	BCM_REFERENCE(err);
 }
 
-/* When user wants to execute local CMD being in remote wifi mode, this fucntion is used
+/* When user wants to execute local CMD being in remote wifi mode, this function is used
  * to change the remote types.
- * This fucntion is called to swap the remote type to execute the cmd using the local
+ * This function is called to swap the remote type to execute the cmd using the local
  *  driver interface.
- * This is required for to call proper front end fucntions to achive the local set/get ioctl.
+ * This is required for to call proper front end fucntions to achieve the local set/get ioctl.
  */
 void
 rwl_wifi_swap_remote_type(int flag)
@@ -186,8 +186,8 @@ rwl_wifi_free_list(dot11_action_wifi_vendor_specific_t *list[])
 
 /*
  *  Configures local channel  for finding server.
- *  Server call this fucntion for getting its current channel,
- *  client uses this fucntion for setting its channel to new channel.
+ *  Server call this function for getting its current channel,
+ *  client uses this function for setting its channel to new channel.
  */
 static int
 rwl_wifi_config_channel(void *wl, int cmd, int *channel)
@@ -213,7 +213,7 @@ rwl_wifi_config_channel(void *wl, int cmd, int *channel)
 		/* Set functionality is used by the client */
 		ci.target_channel = *channel;
 		/*   When user wants to execute local CMD being in remote wifi mode,
-		*	rwl_wifi_swap_remote_type fucntion is used to change the remote types.
+		*	rwl_wifi_swap_remote_type function is used to change the remote types.
 		*/
 		rwl_wifi_swap_remote_type(remote_type);
 		error = wl_set(wl, cmd, &ci.target_channel, sizeof(int));
@@ -246,7 +246,7 @@ rwl_wifi_allocate_actionframe()
 }
 /*
  * Send the valid action frame (CDC+DATA) through the REF driver interface.
- * if the CMD is "findserver" then "findmypeer" frames are sent on the diffrent
+ * if the CMD is "findserver" then "findmypeer" frames are sent on the different
  * channels to reconnect
  * to with server. Other wl cmd takes the normal path.
  * parameter 3 , i.e. buf contains the cmd line arguments  and buf_len is the actual
@@ -314,7 +314,7 @@ remote_CDC_wifi_tx(void *wl, uint cmd, uchar *buf, uint buf_len, uint data_len, 
 	  memcpy((void*)&rem_wifi_send->data[REMOTE_SIZE], buf, data_len);
 	}
 
-	/* Send the action frame to remote server using the  rwl_var_setbuf fucntion,
+	/* Send the action frame to remote server using the  rwl_var_setbuf function,
 	 * which will use the local driver interface to send this frame on the air
 	 */
 	if ((error = rwl_var_send_vs_actionframe(wl, RWL_WIFI_ACTION_CMD, rem_wifi_send,
@@ -371,7 +371,7 @@ remote_CDC_DATA_wifi_rx(void *wl, dot11_action_wifi_vendor_specific_t * rec_fram
  * read data that has reached client in fragments. If the functtion is
  * called from rwl_shell_information_fe then the flag will be set to 1.
  * For shell response this function will output the response on the standard interface.
- * Response will be coming in out of order , this fucntion will make it inorder.
+ * Response will be coming in out of order , this function will make it inorder.
  * Duplicate action frames are ignored.
  */
 int
@@ -381,7 +381,7 @@ void *input, bool shell)
 	int error, totalfrag, seq_num, num_frags, remainingbytes;
 	dot11_action_wifi_vendor_specific_t *rec_frame;
 	uchar *input_buf = (uchar*)input;
-	/* An array of pointers to each recieved frag */
+	/* An array of pointers to each received frag */
 	dot11_action_wifi_vendor_specific_t *master_list[RWL_DEFAULT_WIFI_FRAG_COUNT];
 
 	UNUSED_PARAMETER(input_len);
@@ -397,7 +397,7 @@ void *input, bool shell)
 	/* We don't yet know how many fragments we will need to read since the
 	   length is contained in the first frgment of the message itself. Set
 	   totalfrag to an arbitry large number and we will readjust it after we
-	   successfully recieve the first frag.
+	   successfully receive the first frag.
 	*/
 	totalfrag = RWL_DEFAULT_WIFI_FRAG_COUNT;
 
@@ -460,7 +460,7 @@ void *input, bool shell)
 		(char*)&master_list[0]->data[REMOTE_SIZE], RWL_WIFI_FRAG_DATA_SIZE);
 
 	/*
-	* If all the frames are recieved , copy them to a contigues buffer
+	* If all the frames are received , copy them to a contigues buffer
 	*/
 	for (seq_num = 1; seq_num < totalfrag; seq_num++) {
 		memcpy((char*)&input_buf[seq_num*RWL_WIFI_FRAG_DATA_SIZE],
@@ -519,7 +519,7 @@ rwl_wifi_purge_actionframes(void *wl)
  * check for the channel of remote and respond if it matches with its current
  * channel. Once the server gets the handshake cmd, it will check the channel
  * number of the remote with its channel and if it matches , then it send out the
- * ack to the remote client. This fucntion is used only by the server.
+ * ack to the remote client. This function is used only by the server.
  */
 void
 rwl_wifi_find_server_response(void *wl, dot11_action_wifi_vendor_specific_t *rec_frame)
@@ -555,7 +555,7 @@ rwl_wifi_find_server_response(void *wl, dot11_action_wifi_vendor_specific_t *rec
 }
 /*
  * This function is used by client only. Sends the finmypeer sync frame to remote
- * server on diffrent channels and  waits for the response.
+ * server on different channels and  waits for the response.
  */
 int
 rwl_find_remote_wifi_server(void *wl, char *id)
@@ -659,7 +659,7 @@ rwl_find_remote_wifi_server(void *wl, char *id)
 				/* we are done here, end the loop */
 				break;
 			} else {
-				DPRINT_INFO(OUTPUT, "Server is operating on diffrent channel."
+				DPRINT_INFO(OUTPUT, "Server is operating on different channel."
 				"continue scanning\n");
 			}
 		}
@@ -875,7 +875,7 @@ remote_CDC_tx(void *wl, uint cmd, uchar *buf, uint buf_len, uint data_len, uint 
 	 * If the data is bigger than RWL_WIFI_FRAG_DATA_SIZE size, number of fragments are
 	 * calculated and sent
 	 * similar number of action frames with subtype incremented with sequence.
-	 * Frames are sent with delay to avoid the outof order at receving end
+	 * Frames are sent with delay to avoid the outof order at receiving end
 	 */
 	if (remote_type == REMOTE_WIFI) {
 		if ((rem_wifi_send = rwl_wifi_allocate_actionframe()) == NULL) {
@@ -916,7 +916,7 @@ remote_CDC_tx(void *wl, uint cmd, uchar *buf, uint buf_len, uint data_len, uint 
 				rwl_sleep(RWL_WIFI_SEND_DELAY);
 			}
 
-			/* Check for remaing bytes to send */
+			/* Check for remaining bytes to send */
 			if ((totalframes*RWL_WIFI_FRAG_DATA_SIZE) != buf_len) {
 				rem_wifi_send->type = RWL_ACTION_WIFI_FRAG_TYPE;
 				rem_wifi_send->subtype = tx_count;

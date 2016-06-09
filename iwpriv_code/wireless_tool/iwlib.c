@@ -404,7 +404,7 @@ print_iface_version_info(int	skfd,
   range = (struct iw_range *) buffer;
 
   /* For new versions, we can check the version directly, for old versions
-   * we use magic. 300 bytes is a also magic number, don't touch... */
+   * we use magic. 300 bytes is an also magic number, don't touch... */
   if(wrq.u.data.length >= 300)
     {
       /* Version is always at the same offset, so it's ok */
@@ -487,7 +487,7 @@ iw_get_range_info(int		skfd,
   range_raw = (union iw_range_raw *) buffer;
 
   /* For new versions, we can check the version directly, for old versions
-   * we use magic. 300 bytes is a also magic number, don't touch... */
+   * we use magic. 300 bytes is an also magic number, don't touch... */
   if(wrq.u.data.length < 300)
     {
       /* That's v10 or earlier. Ouch ! Let's make a guess...*/
@@ -510,7 +510,7 @@ iw_get_range_info(int		skfd,
       memcpy((char *) range,
 	     buffer,
 	     iwr15_off(num_channels));
-      /* Frequencies pushed futher down towards the end */
+      /* Frequencies pushed further down towards the end */
       memcpy((char *) range + iwr_off(num_channels),
 	     buffer + iwr15_off(num_channels),
 	     iwr15_off(sensitivity) - iwr15_off(num_channels));
@@ -541,7 +541,7 @@ iw_get_range_info(int		skfd,
     }
 
   /* We are now checking much less than we used to do, because we can
-   * accomodate more WE version. But, there are still cases where things
+   * accommodate more WE version. But, there are still cases where things
    * will break... */
   if(!iw_ignore_version)
     {
@@ -2280,7 +2280,7 @@ iw_in_addr(int		skfd,
       }
 #endif
     }
-  else	/* If it's an hardware address */
+  else	/* If it's a hardware address */
     {
       /* Check if we have valid mac address type */
       if(iw_check_mac_addr_type(skfd, ifname) < 0)
@@ -2323,7 +2323,7 @@ static const int priv_type_size[] = {
 
 /*------------------------------------------------------------------*/
 /*
- * Max size in bytes of an private argument.
+ * Max size in bytes of a private argument.
  */
 int
 iw_get_priv_size(int	args)

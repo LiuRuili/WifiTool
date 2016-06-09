@@ -384,7 +384,7 @@
 #define BCM4314PCIE_PKG_ID		(8 | 2)	/* 4314 QFN PCI (ARM-less) package id */
 #define BCM4314SDIO_ARM_PKG_ID		(8 | 3)	/* 4314 QFN SDIO (ARM-less) package id */
 #define BCM4314SDIO_FPBGA_PKG_ID	(8 | 4)	/* 4314 FpBGA SDIO package id */
-#define BCM4314DEV_PKG_ID		(8 | 6)	/* 4314 Developement package id */
+#define BCM4314DEV_PKG_ID		(8 | 6)	/* 4314 Development package id */
 
 #define BCM4707_PKG_ID		1		/* 4707 package id */
 #define BCM4708_PKG_ID		2		/* 4708 package id */
@@ -509,8 +509,8 @@
 #define BFL3_RCAL_WAR		  0x00000008  /* acphy, rcal war active on this board (4335a0) */
 #define BFL3_TXGAINTBLID	  0x00000070  /* acphy, txgain table id */
 #define BFL3_TXGAINTBLID_SHIFT	  0x4         /* acphy, txgain table id shift bit */
-#define BFL3_TSSI_DIV_WAR	  0x00000080  /* acphy, Seperate paparam for 20/40/80 */
-#define BFL3_TSSI_DIV_WAR_SHIFT	  0x7         /* acphy, Seperate paparam for 20/40/80 shift bit */
+#define BFL3_TSSI_DIV_WAR	  0x00000080  /* acphy, Separate paparam for 20/40/80 */
+#define BFL3_TSSI_DIV_WAR_SHIFT	  0x7         /* acphy, Separate paparam for 20/40/80 shift bit */
 #define BFL3_FEMTBL_FROM_NVRAM    0x00000100  /* acphy, femctrl table is read from nvram */
 #define BFL3_FEMTBL_FROM_NVRAM_SHIFT 0x8         /* acphy, femctrl table is read from nvram */
 #define BFL3_AGC_CFG_2G           0x00000200  /* acphy, gain control configuration for 2G */

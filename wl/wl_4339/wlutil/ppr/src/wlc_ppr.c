@@ -10,7 +10,7 @@
 #if defined(__NetBSD__) || defined(__FreeBSD__)
 #if defined(_KERNEL)
 /* XXX: Define wlc_cfg.h to be the first header file included as some builds
- * get their feature flags thru this file.
+ * get their feature flags through this file.
  */
 #include <wlc_cfg.h>
 #endif /* defined(_KERNEL) */
